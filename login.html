@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Zaloguj do portalu</title>
+    <meta name="user-login" content="">
+    
+    
+
+	<script type="text/javascript">
+		var start_time_ready = new Date().getTime();
+	</script>
+			
+	<link rel="icon" type="image/x-icon" href="common/favicon.ico">
+ 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
+	
+<!--    <link rel="stylesheet" style="text/css" href="common/jsonform/bootstrap.css" />-->
+	<script type="text/javascript" src="common/jsonform/underscore.js"></script>
+    <script type="text/javascript" src="common/jsonform/jsv.js"></script>
+    <script type="text/javascript" src="common/jsonform/jsonform.js"></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="common/layout-default-latest.css" />
+    <script type="text/javascript" src="common/jquery.layout-latest.js"></script>
+
+    <script src="common/jquery.menu.js"></script>
+    <link href="common/menu.css" rel="stylesheet" type="text/css" />
+
+    <link href="common/ui.fancytree.min.css" rel="stylesheet" type="text/css">
+    <script src="common/jquery.fancytree-all.min.js"></script>
+
+
+    <script src="common/ejs.min.js"></script>
+
+	<!--https://github.com/free-jqgrid/jqGrid/wiki/Access-free-jqGrid-from-different-CDNs-->
+	<!--<link rel="stylesheet" href="//cdn.jsdelivr.net/free-jqgrid/latest/css/ui.jqgrid.css">-->
+<!--	<script src="//cdn.jsdelivr.net/free-jqgrid/latest/js/i18n/grid.locale-de.js"></script>-->
+	<!--<script src="//cdn.jsdelivr.net/free-jqgrid/latest/js/jquery.jqgrid.min.js"></script>-->
+
+	
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jqgrid/4.6.0/css/ui.jqgrid.css">
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jqgrid/4.6.0/js/jquery.jqGrid.min.js"></script>
+
+	<!--
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/jqgrid/4.6.0/css/ui.jqgrid.css" />
+    <script src="//cdn.jsdelivr.net/jqgrid/4.6.0/jquery.jqGrid.min.js"></script>
+
+    <script src="//cdn.jsdelivr.net/jqgrid/4.6.0/plugins/grid.addons.js"></script>
+    <script src="//cdn.jsdelivr.net/jqgrid/4.6.0/plugins/grid.postext.js"></script>
+    <script src="//cdn.jsdelivr.net/jqgrid/4.6.0/plugins/grid.setcolumns.js"></script>
+    <script src="//cdn.jsdelivr.net/jqgrid/4.6.0/plugins/jquery.contextmenu.js"></script>
+    <script src="//cdn.jsdelivr.net/jqgrid/4.6.0/plugins/jquery.searchFilter.js"></script>
+    <script src="//cdn.jsdelivr.net/jqgrid/4.6.0/plugins/jquery.tablednd.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/jqgrid/4.6.0/plugins/searchFilter.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/jqgrid/4.6.0/plugins/ui.multiselect.css" />
+    <script src="//cdn.jsdelivr.net/jqgrid/4.6.0/plugins/ui.multiselect.js"></script>
+	-->
+	<script src="//cdn.socket.io/socket.io-1.4.5.js"></script>
+
+    <!-- srvMode=="standalone"-->
+    <script src="common/jayson/jquery.js"></script>
+
+    <script type="text/javascript" src="common/sha.js"></script>
+    <script type="text/javascript" src="common/es6-promise.js"></script>	
+	
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment-with-locales.min.js"></script>
+	
+	<script src="//cdn.jsdelivr.net/ace/1.2.3/min/ace.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/tinymce/4.3.10/tinymce.min.js"></script> 
+	
+	<!-- jquery.tinymce.min.js -->	
+	<!-- script src="//cdn.tinymce.com/4/tinymce.min.js" -->
+
+	<script type="text/javascript" src="common/db.min.js"></script>	
+
+	<!-- Latest compiled and minified CSS -->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">-->
+
+	<!-- Optional theme -->
+	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">-->
+
+	<!-- Latest compiled and minified JavaScript -->
+	<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>-->
+	
+	<!--	<script src="http://jsconsole.com/js/remote.js?08d0bd3e-b223-4d1a-8df6-f1a3f6004bf9"></script>-->	
+
+    <!--
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/smoothness/jquery-ui.css" type="text/css" media="all" />
+    -->
+
+    <style type="text/css">
+        /*rem_font-size:   25px*/
+        body {
+            font-family: tahoma;
+            font-size: 14px; /*w versio5 w podglądzie jest verdana*/
+
+			/*rem_font-family: Segoe WPC,Segoe UI,SFUIText-Light,HelveticaNeue-Light,sans-serif
+			rem_font-size:   10%;
+			rem_font-size: 9px;*/
+			
+            /*padding:0px; */ /*ramka wokol okna przegladarki*/
+            font-weight: normal;
+        }
+		
+        .ui-layout-pane {
+            border: 0; /* obwodki splitbarow, sa delikatniejsze i nie ma kreski ciemniejszej na krawedzi u gory okna; override layout-default-latest.css */
+            /*border-top:		3px ;
+			border-bottom:	3px;*/
+            padding: 0; /*bez odstepow w ramkach paneli*/
+			
+			/* disable scrolling in ALL panes*/
+/*			overflow: hidden !important;			*/
+        }        
+
+		/* powoduje że górne menu jest "na wierzchu" layoutu a nie tylko w górnym panelu, efekt uboczny: przyciski częściowo nie działają (gdy są zasłonięte przez nachodzący panel)*/		
+        .ui-layout-north {
+            z-index: 50 !important;
+            overflow: visible !important;
+        }		
+		
+        .auth-wrapper {
+            /*margin: -160px 0px 0px -300px;*/
+            position: absolute;
+            left: 40%;
+            top: 20%;
+        }
+		
+		/*bez obwódki dookoła drzewka*/
+		ul.fancytree-container {
+			outline:none !important;
+		}
+        
+		/* poprawka podświetlenia grid, domyślny był w niewyraźnym kolorze */
+        .ui-state-highlight {
+            background: gray !important;
+        }
+
+        /* usunięcie ramki oraz zaokrągleń wokół jqgrid http://stackoverflow.com/questions/11790302/remove-vertical-lines-in-jqgrid */
+        .ui-jqgrid {
+            border-width: 0px;
+        }
+
+
+		
+		/* grid wyświetlanie wskaźnika strzałki*/
+		.reka {
+			cursor: pointer;
+		}		
+		
+		.ikonka-aktywonsci {
+			background-image: url("/images/icons.png");
+			background-position: -15px -255px;
+			background-repeat: no-repeat;
+			background-size: auto auto;
+			display: inline-block;
+			height: 12px;
+			text-align: right;
+			vertical-align: middle;
+			width: 12px;
+		}
+		/*
+			rem_color: rgb(51, 51, 51);
+			rem_cursor: pointer;
+			rem_direction: ltr;
+			rem_font-family: helvetica,arial,sans-serif;
+			rem_font-size: 12px;
+			rem_line-height: 32px;
+			rem_list-style-type: none;
+			rem_margin-left: 4px;
+		*/
+		
+	</style>
+    
+    
+</head>
+
+<body>
+<!--
+    <div role="main" class="main-content">
+        <div class="auth-form " id="login">
+            <form accept-charset="UTF-8" action="http://localhost:3000" data-form-nonce="77925ead54de5b8012d51a62e550a8a66b2ca909" method="post">
+                <div style="margin:0;padding:0;display:inline">
+                    <input name="utf8" type="hidden" value="✓">
+                    <input name="authenticity_token" type="hidden" value="AdE/T+4RW+O/XD/CsXP6ihIQ4q6AfP9AKbRqVoiAocG4h/CGaI+lYMWXZEycBwJr/zijOgYp35LvtAQ4q4+rtg==">
+                </div>
+                <div class="auth-form-header">
+                    <h1>Zaloguj</h1>
+                </div>
+
+                <div class="auth-form-body">
+                    <label for="login_field">Adres email</label>
+                    <input autocapitalize="off" autocorrect="off" autofocus="autofocus" class="form-control input-block" id="login_field" name="user" tabindex="1" type="text">
+                    <label for="password">Hasło<a href="/password_reset" class="label-link">Zapomniałeś hasła?</a></label>
+                    <input class="form-control form-control input-block" id="password" name="password" tabindex="2" type="password">
+                    <input class="btn btn-primary btn-block" data-disable-with="Logowanie" name="commit" tabindex="3" type="submit" value="Sign in">
+                </div>
+            </form>
+        </div>
+    </div>
+-->
+    <div id="loginpanel" class="auth-wrapper" >
+    <form accept-charset="UTF-8" action="http://localhost:3000" data-form-nonce="77925ead54de5b8012d51a62e550a8a66b2ca909" method="post">
+        <div style="margin:0;padding:0;display:inline">
+            <input name="utf8" type="hidden" value="?" />
+            <input name="authenticity_token" type="hidden" value="TRYnkqpM2mAd/gKL9K9RES1Vz3Wp5Y8VeF7fe6WlEMFiqll12ECJiysHYbrZ+FXsTljRdtEhh+Hxw3gpFVIQDw==" />
+        </div>
+
+        <div class="auth-form-header">
+            <h1>Portal <font color="blue">ludzi</font></h1>
+        </div>
+		<br /><br />
+        <div class="auth-form-body">
+            <label for="user">Użytkownik ............... </label>
+            <input autofocus="autofocus" class="input-block" id="user" name="user" tabindex="1" type="text" />
+            <!--autocapitalize="off" autocorrect="off" -->
+
+
+            <div style="clear:both;"> </div>
+            <div style="clear:both;"> </div>
+            <br />
+
+            <label for="pass">Hasło ........................ <!--<a href="/password_reset">(forgot password)</a>--></label>
+            <input class="input-block" id="password" name="password" tabindex="2" type="password" />
+            <!--<input id="return_to" name="return_to" type="hidden" value="/fbbdev/node-fastcgi" /> -->
+            <div style="clear:both;"> </div>
+            <br />
+            <input class="button" id="commit" name="commit" tabindex="3" type="submit" value="Zaloguj się" />
+            
+            <!--data-disable-with="Logowanie…"-->
+        </div>
+        <!--</form>-->
+		<br /><br /><br />
+		<div class="auth-form-header">
+            <h1>Rejestracja</h1>
+        </div>
+
+        <div class="auth-form-body">
+            <label for="user">Adres e-mail ............... </label>
+            <input autocapitalize="off" autocorrect="off" class="input-block" id="user_register" name="user_register" tabindex="4" type="text" />
+            <div style="clear:both;"> </div>
+            <div style="clear:both;"> </div>
+            <br />
+                                 
+            <div style="clear:both;"> </div>
+            <br />
+            <input class="button" data-disable-with="Logowanie…" id="submit_register" name="submit_register" tabindex="5" type="submit" value="Rejestracja" />
+            <br /><br /><br />
+            versio Paweł Wypustek<br />
+            <a href="mailto:pawel.wypustek@gmail.com">pawel.wypustek@gmail.com</a> <br />
+            tel. 601 184 416
+
+        </div>
+    </form>                
+        
+    </div>
+</body>
+
+</html>

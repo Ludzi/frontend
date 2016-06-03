@@ -1,0 +1,3992 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!--http:/getbootstrap.com/examples/signin/?-->
+    
+	<!--
+    <meta name="viewport" content="width=device-width,
+                                   initial-scale=1.5,
+                                   maximum-scale=1.5,
+                                   user-scalable=no,
+                                   minimal-ui">
+-->
+    <title>ludzi.org wersja beta</title>
+	
+	<script type="text/javascript">
+		var start_time_ready = new Date().getTime();
+	</script>
+			
+	<link rel="icon" type="image/x-icon" href="common/favicon.ico">
+ 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
+	
+<!--    <link rel="stylesheet" style="text/css" href="common/jsonform/bootstrap.css" />-->
+	<script type="text/javascript" src="common/jsonform/underscore.js"></script>
+    <script type="text/javascript" src="common/jsonform/jsv.js"></script>
+    <script type="text/javascript" src="common/jsonform/jsonform.js"></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="common/layout-default-latest.css" />
+    <script type="text/javascript" src="common/jquery.layout-latest.js"></script>
+
+    <script src="common/jquery.menu.js"></script>
+    <link href="common/menu.css" rel="stylesheet" type="text/css" />
+
+    <link href="common/ui.fancytree.min.css" rel="stylesheet" type="text/css">
+    <script src="common/jquery.fancytree-all.min.js"></script>
+
+
+    <script src="common/ejs.min.js"></script>
+
+
+	<!--https://github.com/free-jqgrid/jqGrid/wiki/Access-free-jqGrid-from-different-CDNs-->
+	<!--<link rel="stylesheet" href="//cdn.jsdelivr.net/free-jqgrid/latest/css/ui.jqgrid.css">-->
+<!--	<script src="//cdn.jsdelivr.net/free-jqgrid/latest/js/i18n/grid.locale-de.js"></script>-->
+	<!--<script src="//cdn.jsdelivr.net/free-jqgrid/latest/js/jquery.jqgrid.min.js"></script>-->
+
+	
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jqgrid/4.6.0/css/ui.jqgrid.css">
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jqgrid/4.6.0/js/jquery.jqGrid.min.js"></script>
+
+	<!--
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/jqgrid/4.6.0/css/ui.jqgrid.css" />
+    <script src="//cdn.jsdelivr.net/jqgrid/4.6.0/jquery.jqGrid.min.js"></script>
+
+    <script src="//cdn.jsdelivr.net/jqgrid/4.6.0/plugins/grid.addons.js"></script>
+    <script src="//cdn.jsdelivr.net/jqgrid/4.6.0/plugins/grid.postext.js"></script>
+    <script src="//cdn.jsdelivr.net/jqgrid/4.6.0/plugins/grid.setcolumns.js"></script>
+    <script src="//cdn.jsdelivr.net/jqgrid/4.6.0/plugins/jquery.contextmenu.js"></script>
+    <script src="//cdn.jsdelivr.net/jqgrid/4.6.0/plugins/jquery.searchFilter.js"></script>
+    <script src="//cdn.jsdelivr.net/jqgrid/4.6.0/plugins/jquery.tablednd.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/jqgrid/4.6.0/plugins/searchFilter.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/jqgrid/4.6.0/plugins/ui.multiselect.css" />
+    <script src="//cdn.jsdelivr.net/jqgrid/4.6.0/plugins/ui.multiselect.js"></script>
+	-->
+	<script src="//cdn.socket.io/socket.io-1.4.5.js"></script>
+
+    <!-- srvMode=="standalone"-->
+    <script src="common/jayson/jquery.js"></script>
+
+    <script type="text/javascript" src="common/sha.js"></script>
+    <script type="text/javascript" src="common/es6-promise.js"></script>	
+	
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment-with-locales.min.js"></script>
+	
+	<script src="//cdn.jsdelivr.net/ace/1.2.3/min/ace.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/tinymce/4.3.10/tinymce.min.js"></script> 
+	
+	<!-- jquery.tinymce.min.js -->	
+	<!-- script src="//cdn.tinymce.com/4/tinymce.min.js" -->
+
+	<script type="text/javascript" src="common/db.min.js"></script>	
+
+	<!-- Latest compiled and minified CSS -->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">-->
+
+	<!-- Optional theme -->
+	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">-->
+
+	<!-- Latest compiled and minified JavaScript -->
+	<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>-->
+	
+	<!--	<script src="http://jsconsole.com/js/remote.js?08d0bd3e-b223-4d1a-8df6-f1a3f6004bf9"></script>-->	
+<script>	
+// Prevent jQuery UI dialog from blocking focusin
+$(document).on('focusin', function(e) {
+    if ($(e.target).closest(".mce-window, .moxman-window").length) {
+		e.stopImmediatePropagation();
+	}
+});
+
+  
+</script>
+
+    <!--
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/smoothness/jquery-ui.css" type="text/css" media="all" />
+    -->
+
+    <style type="text/css">
+        /*rem_font-size:   25px*/
+        body {
+            font-family: tahoma;
+            font-size: 14px; /*w versio5 w podglądzie jest verdana*/
+
+			/*rem_font-family: Segoe WPC,Segoe UI,SFUIText-Light,HelveticaNeue-Light,sans-serif
+			rem_font-size:   10%;
+			rem_font-size: 9px;*/
+			
+            /*padding:0px; */ /*ramka wokol okna przegladarki*/
+            font-weight: normal;
+        }
+		
+        .ui-layout-pane {
+            border: 0; /* obwodki splitbarow, sa delikatniejsze i nie ma kreski ciemniejszej na krawedzi u gory okna; override layout-default-latest.css */
+            /*border-top:		3px ;
+			border-bottom:	3px;*/
+            padding: 0; /*bez odstepow w ramkach paneli*/
+			
+			/* disable scrolling in ALL panes*/
+/*			overflow: hidden !important;			*/
+        }        
+
+		/* powoduje że górne menu jest "na wierzchu" layoutu a nie tylko w górnym panelu, efekt uboczny: przyciski częściowo nie działają (gdy są zasłonięte przez nachodzący panel)*/		
+        .ui-layout-north {
+            z-index: 50 !important;
+            overflow: visible !important;
+        }		
+		
+        .auth-wrapper {
+            /*margin: -160px 0px 0px -300px;*/
+            position: absolute;
+            left: 40%;
+            top: 20%;
+        }
+		
+		/*bez obwódki dookoła drzewka*/
+		ul.fancytree-container {
+			outline:none !important;
+		}
+        
+		/* poprawka podświetlenia grid, domyślny był w niewyraźnym kolorze */
+        .ui-state-highlight {
+            background: gray !important;
+        }
+
+        /* usunięcie ramki oraz zaokrągleń wokół jqgrid http://stackoverflow.com/questions/11790302/remove-vertical-lines-in-jqgrid */
+        .ui-jqgrid {
+            border-width: 0px;
+        }
+
+
+		
+		/* grid wyświetlanie wskaźnika strzałki*/
+		.reka {
+			cursor: pointer;
+		}		
+		
+		.ikonka-aktywonsci {
+			background-image: url("/images/icons.png");
+			background-position: -15px -255px;
+			background-repeat: no-repeat;
+			background-size: auto auto;
+			display: inline-block;
+			height: 12px;
+			text-align: right;
+			vertical-align: middle;
+			width: 12px;
+		}
+		/*
+			rem_color: rgb(51, 51, 51);
+			rem_cursor: pointer;
+			rem_direction: ltr;
+			rem_font-family: helvetica,arial,sans-serif;
+			rem_font-size: 12px;
+			rem_line-height: 32px;
+			rem_list-style-type: none;
+			rem_margin-left: 4px;
+		*/
+		
+	</style>
+
+	<!--
+	/*.ui-layout-pane {		
+			padding:	0px;
+			padding-bottom: 0;
+		}*/		
+		
+		/*
+		// disable scrolling only in the North & South panes
+		.ui-layout-pane-center {
+			overflow: hidden !important;
+		}		*/
+		-->
+	
+
+	<style type="text/css">
+	
+	<!--	main menu style
+		body
+		{
+		    padding:10px; 
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+			font-size: 13px;
+			font-weight: normal; 
+		}-->
+	</style>
+	
+    <script type="text/javascript">
+        "use strict";
+
+		var session;
+		session = {
+			"forms": {},				
+			"grids": {},				
+			"chats": {},
+			"objs": {},
+			"firstCall": true,	/*podczas pierwszego zapytania do serwera pobieramy dodatkowe informacje o użytkowniku*/
+			"sessionObj": {},
+			"usersListGridIdx": null,
+			"backendAdr": window.location.hostname,
+			"gGridHeightDiff": 22, 
+			"gGridWidthDiff": 17
+		};
+
+		var JS = JSON.stringify;
+		
+		try {
+			if (localStorage.getItem("design") && localStorage.getItem("design")=="true") {
+				session.design = true;
+			}
+		} catch (e) {
+			alert("Przeglądarka nie obsługuje " + localStorage);
+		}
+		
+		var mainLayout_settings = {
+  defaults: {
+      fxName:               "none"
+/*   ,  fxSpeed:               "slow"
+   ,  spacing_closed:        14
+   ,  initClosed:            true*/
+   }
+			, spacing_open: 3
+
+                //	reference only - these options are NOT required because 'true' is the default
+			, closable: false	// pane can open and close
+                /*		,	resizable:					true	// when open, pane can be resized */
+                /*		,	slidable:					true	// when closed, pane can 'slide' open over other panes - closes on mouse-out*/
+                /*		,	livePaneResizing:			true*/
+                /*
+                        //	some resizing/toggling settings
+                        ,	north__slidable:			true	// OVERRIDE the pane-default of 'slidable=true'
+                        ,	north__togglerLength_closed: '100%'	// toggle-button is full-width of resizer-bar
+                        ,	north__spacing_closed:		20		// big resizer-bar when open (zero height)
+                */
+
+            , north__size: 40
+            , north__resizable: true
+            , north__spacing_open: 3
+			, north__spacing_closed: 20		// big resizer-bar when open (zero height)
+            /*, north__closable: false*/
+            /*, north__resizable: true*/	// when open, pane can be resized */
+
+            , south__size: 40
+            , south__resizable: true	// OVERRIDE the pane-default of 'resizable=true'
+            , south__spacing_open: 3		// no resizer-bar when open (zero height)
+            , south__spacing_closed: 20		// big resizer-bar when open (zero height)
+
+                //	some pane-size settings
+                		,	east__size:					300
+                        ,	east__minSize:				200
+                        ,	east__maxSize:				.5 // 50% of layout width
+
+/*			, initHidden: true*/
+
+/*			, 	fxSpeed: 0*/
+            , center__minWidth: 100
+
+            , west__minSize: 70
+                //100
+            , west__size: 170
+
+                //	some pane animation settings
+            , west__animatePaneSizing: false
+/*            , west__fxSpeed_size: "fast"	// 'fast' animation when resizing west-pane
+            , west__fxSpeed_open: 1000	// 1-second animation when opening west-pane
+            , west__fxSettings_open: { easing: "easeOutBounce" } // 'bounce' effect when opening
+            , west__fxName_close: "none"	// NO animation when closing west-pane
+			
+			, east__fxName_close: "none"	// NO animation when closing*/
+
+                //	enable showOverflow on west-pane so CSS popups will overlap north pane
+                /*,	west__showOverflowOnHover:	true*/
+
+                //	enable state management
+            , stateManagement__enabled: false// automatic cookie load and save enabled by default
+
+            , showDebugMessages: true // log and/or display messages from debugging and testing code
+
+
+                //		,	center__size:			.50
+            /*, center__childOptions: {
+                //north__childOptions:	{
+				//	size:		.33
+				//}
+					north__closable: false
+                    , north__size: 40
+                    , north__spacing_open: 3
+
+                    , south__closable: false
+                    , south__size: .33
+                    , south__spacing_open: 3
+
+                    , center: {
+                        onresize: function (pane, $Pane) {
+                            console.log($Pane);
+                            getOrSetGridWidthAndHeight($Pane.innerWidth(), $Pane.innerHeight(), true);
+                        }
+                    }
+            }*/
+
+        };
+
+		//	dialog-box contains a layout
+		//var dialogLayout;
+		var dialogLayout_settings = {
+				zIndex:				0		// HANDLE BUG IN CHROME - required if using 'modal' (background mask)
+			,	resizeWithWindow:	false	// resizes with the dialog, not the window
+			,	spacing_open:		6
+			,	spacing_closed:		6
+			,	west__size:			'30%' 
+			,	west__minSize:		100 
+			,	west__maxSize:		300 
+			,	south__size:		'auto' 
+			,	south__closable:	false 
+			,	south__resizable:	false 
+			,	south__slidable:	false 
+			//,	applyDefaultStyles:		true // DEBUGGING
+		}
+		
+        $(document).ready(function () {
+			
+	        session.request_time_ready = new Date().getTime() - start_time_ready;
+			moment.locale("pl");					
+			
+            /*$("#kodkreskowy").keyup(function (event) {
+                if (event.keyCode == 13) {
+                    $("#kodkreskowyBtn").click();
+                }
+            });*/
+
+            session.sessionId = getCookie("sysauth");
+            //	alert("getcooie " + sessionId);
+            if (session.sessionId !== undefined) {
+				formCreate(1, 1, {});
+                /*backend("session", { "sysauth": sessionId },
+                    function (errorCode, errorMessage) {
+                        //alert("error: " + JSON.stringify(result));
+                        console.log(JSON.stringify(errorCode));
+                        console.log(JSON.stringify(errorMessage));
+                        //alert("Sesja wygasla, zaloguj sie ponownie.\n\r\n\r" + errorCode + " " + errorMessage);
+                        doLogin("1");
+                    },
+                    function (result) {
+                        alert("backend ok " + JSON.stringify(result));
+                        formCreate(1, 1, {});
+
+                    }
+                );*/
+            } else {
+                doLogin("1");
+            }
+
+            /*
+            * Perform some validation here.
+            */
+            /*
+            $.post("http://localhost:3000/login",{email:email,pass:pass},function(data){
+                if(data==='done')
+                {
+                window.location.href="/admin";
+                }
+            });*/
+        });
+
+        //return;
+        /*
+            $( document ).ajaxComplete(function() {
+                //$( ".log" ).text( "Triggered ajaxComplete handler." );
+                $( "#aaabbb" ).click(function() {
+                    //alert( "Handler for .click() called." );
+        //			$('#grid').load(srvAdr + "?o=525"); //ui-layout-center //div.grid
+                });
+            });
+        */
+        /*
+            // powodowalo rozwalenie pulldown menu
+            $( "input[type=submit], a, button" ).button({
+                icons: {
+                primary: "images/ADD.BMP"
+                }
+            })
+        */
+        //	showLayout();
+        //$('body').layout(/*{ applyDemoStyles: true }*/);
+
+        //});
+
+        function showLayout(formIdx, gridIdx, callback) {
+			var elem;
+			if (formIdx=="1") {
+				elem = "#bodydiv";
+			} else {
+				elem = "#dialogBox" + formIdx;				
+			}
+
+			if (session.forms[formIdx]["layout"].menu) {
+				//jQuery(".ui-layout-north").show();
+		//		session.forms[formIdx].outerLayout.show("north");
+				$("#menudiv" + formIdx).show();
+			} else {
+				$("#menudiv" + formIdx).hide();
+			}
+			
+			if (session.forms[formIdx]["layout"].tree) {
+				//jQuery(".ui-layout-west").show();
+		//		session.forms[formIdx].outerLayout.show("west");
+				$("#treediv" + formIdx).show();
+			} else {
+				$("#treediv" + formIdx).hide();
+			}
+			
+			if (session.forms[formIdx]["layout"].form) {
+				//jQuery(".ui-layout-center").show();
+		//		session.forms[formIdx].outerLayout.show("center");
+/*				session.forms[formIdx].innerLayout.show("north");
+				session.forms[formIdx].innerLayout.show("south");
+				session.forms[formIdx].innerLayout.show("center");				
+*/				
+				$("#centerdiv" + formIdx).show();
+
+			}
+			if (session.forms[formIdx]["layout"].status) {
+				//jQuery(".ui-layout-south").show();
+		//		session.forms[formIdx].outerLayout.show("south");
+				$("#statusdiv" + formIdx).show();				
+			} else {
+		//		session.forms[formIdx].outerLayout.hide("south");
+			}
+
+            //$('#west-container').load("http://versio.pl/update/test/test.cgi?o=3905");
+            //		$('div.ui-layout-west').load(srvAdr + "?o=519"); //3905
+
+		
+			if (!session.forms[formIdx].layout.tree) {
+				session.forms[formIdx].layout.tree = "<pomin>";
+			}
+			if (!session.forms[formIdx].layout.menu) {
+				session.forms[formIdx].layout.menu = "<pomin>";
+			}
+			if (!session.forms[formIdx].layout.innerform) {
+				session.forms[formIdx].layout.innerform = "<pomin>";
+			}
+			
+            session.forms[formIdx].outerLayout = $(elem).layout(mainLayout_settings);
+			//session.forms[formIdx].outerLayout.resizeAll();
+
+			if (!session.forms[formIdx].layout.menu || session.forms[formIdx].layout.menu == "<pomin>") {
+				session.forms[formIdx].outerLayout.hide('north');
+			}
+			
+			if (!session.forms[formIdx].layout.tree || session.forms[formIdx].layout.tree == "<pomin>") {
+				session.forms[formIdx].outerLayout.hide('west');
+			}
+		
+			if (!session.forms[formIdx].layout.east || session.forms[formIdx].layout.east == "<pomin>") {
+				session.forms[formIdx].outerLayout.hide('east');
+			}
+			
+			backend("run", { "o": session.forms[formIdx].layout.tree }).then( /*4381*/
+                function (result) {
+					//$('div.ui-layout-west').text(JSON.stringify(result)); //"http://versio.pl/update/test/test.cgi?o=3905"
+                    //session.forms[formIdx].initContent('west');
+                    if (result!="<pomin>") {
+						createMainTree(result.data, formIdx);
+					}
+
+                    backend("run", { "o": session.forms[formIdx].layout.menu }).then(  /*4366*/
+                        function (result) {
+                            //alert("createMainMenu");
+							if (result!="<pomin>") {					
+								createMainMenu(result.data, formIdx);
+							}
+							////////////
+							backend("run", { "o": session.forms[formIdx].layout.innerform }).then(  /*4366*/
+								function (result) {
+									if (result!="<pomin>") {					
+										//createMainMenu(result.data, formIdx);
+										session.forms[formIdx].innerform = JSON.parse(result.data); // todo result.data powinien być w wywołaniu nie jako string tylko jako obiekt
+										jsonForm(session.forms[formIdx].layout.innerform, result.data, formIdx, gridIdx);
+									}		
+									callback();
+								},
+								function (err) {
+									//errMsg("error: (3)", err);
+                                    console.log("error: (3)", err);
+									doLogin("1");
+								}								
+							);														
+							////////////
+                        },
+                        function (err) {
+							//errMsg("error: (2)", err);                            
+                            console.log("error: (2)", err);                            
+                            doLogin("1");
+                        }						
+                    );
+
+                },				
+                function (err) {
+					//errMsg("error: (1)", err);
+                    console.log("error: (1)", err);                            
+                    doLogin("1");
+                }											
+            );
+			
+			
+			
+			
+			
+			/*
+            test1("run", { "o": 519 }, //drzeko
+                function (result) {
+                    alert("error: " + JSON.stringify(result));
+                    doLogin();
+                },
+                function (result) {
+                    createMainTree(result, "");
+                    //alert("run507");
+                    backend("run", { "o": 4366 },  		//glowne menu 507
+                        function (result) {
+                            alert("error: " + JSON.stringify(result));
+                            doLogin();
+                        },
+                        function (result) {
+                            //alert("createMainMenu");
+                            createMainMenu(result, "");
+
+                        }
+                    );
+                }
+            );*/
+
+
+            //session.forms[formIdx].contents.east.load("http://versio.pl/update/test/test.cgi?o=3905");
+
+            //$('div.ui-layout-east').html( $('#output').val() );
+            //session.forms[formIdx].initContent('east');
+
+            // początkowe wyświetlenie grid-a
+            //            createGrid();
+
+        }
+
+		function removeLayout(elem, formIdx, which)
+		{
+			
+			switch (which) {
+				case "inner":
+					$("#actiondiv" + formIdx).remove();
+					$("#grid" + formIdx).remove();
+					$("#previewdiv" + formIdx).remove();
+					//$("#" + elem + " > .ui-layout-resizer").empty();
+/*					if (session.forms[formIdx].innerLayout) {
+						session.forms[formIdx].innerLayout.destroy();
+						session.forms[formIdx].innerLayout = undefined;
+					}*/
+//					return;
+					break;
+					
+				case "outer":
+					$("#menudiv" + formIdx).remove();
+					$("#centerdiv" + formIdx).remove();
+					$("#treediv" + formIdx).remove();
+					//$("#userdiv" + formIdx).remove();
+					$("#statusdiv" + formIdx).remove();
+					$("#usersdiv" + formIdx).remove();			
+//					$(".ui-layout-resizer").remove();
+/*					if (session.forms[formIdx].outerLayout) {
+						session.forms[formIdx].outerLayout.destroy();
+						session.forms[formIdx].outerLayout = undefined;
+					}*/
+					break;
+					
+				case "dialog":
+//					$("#" + elem + " > .ui-layout-resizer").remove();
+/*					if (session.forms[formIdx].outerLayout) {
+						session.forms[formIdx].outerLayout.destroy();
+						session.forms[formIdx].outerLayout = undefined;
+					}*/
+					break;
+					
+				default:
+					alert("Błąd #655761");
+			}
+			
+			destroyLayout ( elem, elem );
+
+			
+/*
+			//http://layout.jquery-dev.com/demos/destroy.html
+			//var $C = $("body");
+			var $C = $("#" + elem);
+			if ($C.data("layoutContainer")) {
+				$C.layout().destroy();
+				status(1, "$C.layout().destroy()")
+				console.log("$C.layout().destroy()")
+			} else {
+				console.log("Brak $C.layout().destroy();")
+			}*/
+
+/*			if (which=="outer") {
+				if (session.forms[formIdx]) {
+					session.forms[formIdx].outerLayout = undefined;
+				}
+			}*/
+		}
+		
+
+		// poniższe funkcje na podstawie: http://layout.jquery-dev.com/demos/destroy.html
+		function createLayout ( containerSelector, name ) {
+			name = containerSelector.replace(/\#/g, "");
+			containerSelector = "#" + name;
+			//var name = (containerSelector === 'body' ? 'outerLayout' : 'innerLayout')
+			var $C = $(containerSelector);
+			if (!$C.data("layoutContainer"))
+				window[ name ] = $C.layout({
+					name:						name
+				,	initChildren:				false
+				,	destroyChildren:			false
+				,	stateManagement__enabled:	true // maintain state between destroy/create
+				,	includeChildren:			false
+				});
+		};
+		
+		function destroyLayout ( containerSelector, name ) {
+			name = containerSelector.replace(/\#/g, "");
+			containerSelector = "#" + name;
+			//var name = (containerSelector=='body' ? 'outerLayout' : 'innerLayout')
+			var $C = $(containerSelector);
+			if ($C.data("layoutContainer"))
+				$C.layout().destroy();
+
+			// show appropriate button
+			window[ name ] = null;
+		};
+
+		
+        function gridCreate(arg, formIdx, arg1, callback) {
+
+			var usersList = $.inArray("userslist=1", arg1); // -1 nie, 1 tak
+
+			var gridIdx;
+			var newGridIdx = 1;
+			while (session.grids[String(newGridIdx)]) {
+				newGridIdx++;
+			}
+			gridIdx = newGridIdx;
+			session.grids[gridIdx] = {
+				"object": arg,
+                "formIdx": formIdx,
+                
+                "pagingRowCount": 0,
+                "pagingFrom": 0,
+                "pagingTo": 0,
+                "pagingCurrentPage": 0,
+                "pagingPageCount": 0                
+			}			
+
+            var pagingPageSize;
+            //if (params.pagingPageSize) {
+            //    pagingPageSize = parseInt(params.pagingPageSize, 10);
+            //} else {
+                pagingPageSize = 25;
+            //}                     
+            session.grids[gridIdx]["pagingPageSize"] = pagingPageSize;
+                        
+			if (usersList==1) {
+				session.grids[gridIdx].userslist = true;
+				session.usersListGridIdx = gridIdx;
+				var subDiv = $("<div>").attr("id", "grid_container_grid" + gridIdx);
+				session.grids[gridIdx].jqGridElement = "jqGrid_grid" + gridIdx;
+				subDiv.append($("<table>").attr("id", session.grids[gridIdx].jqGridElement));
+				session.forms[formIdx].divEast.append(subDiv); // todo a nie powinno być east-container ?
+
+			} else {
+				session.grids[gridIdx].jqGridElement = 'jqGrid' + formIdx;
+				configureInnerLayout({"north": true, "center": true, "south": true, "grid": true}, formIdx);
+				if ($("#" + session.grids[gridIdx].jqGridElement)) {
+					$("#" + session.grids[gridIdx].jqGridElement).jqGrid('GridUnload'); // utworzenie na nowo grid-a
+					//$('#jqGrid').clearGridData();   // jeżeli tylko dane chcemy wypełnić
+				}				
+			}
+			
+//            jQuery(".ui-layout-north").show()
+			
+            var colModel = arg.attribute;
+			for (var i in colModel) {					
+				colModel[i]["classes"] = "reka";
+			}
+			session.grids[gridIdx].colModel = colModel;
+
+			/*colModel = [
+                    {name:'companyid',index:'companyid', key:true, width:100,editable:true,editoptions:{size:10}},
+                    {name:'company',index:'company', width:100,editable:true},
+                    {name:'price',index:'price', width:100,editable:true,editoptions:{size:10}},
+                    {name:'Change',index:'Change', width:100,editable:true,editoptions:{size:25}},
+                    {name:'perchange',index:'perchange', width:100, align:"right",editable:true,editoptions:{size:10}},
+                    {name:'LastUpdated',index:'LastUpdated', width:200, align:"right",editable:true,editoptions:{size:10}}
+            ]*/
+			/*colModel = [
+                    {name:'name1',index:'name1', key:true, width:100,editable:true,editoptions:{size:10}},
+                    {name:'email',index:'email', width:100,editable:true},
+                    {name:'status',index:'status', width:100,editable:true,editoptions:{size:10}}             
+            ]*/
+			var mydata = arg.data;
+
+
+            var gridHeight, gridWidth;
+  
+            //gridHeight = jQuery(".ui-layout-center").innerHeight()-220-gGridHeightDiff; //350 //100; //
+            var gridCoord = getOrSetGridWidthAndHeight(undefined, undefined, false, formIdx); //[1]
+			gridHeight = gridCoord[0];
+			gridWidth =  gridCoord[1];
+//						jQuery("#jqGrid" + formIdx).jqGrid('setGridHeight',paneState.innerHeight - gGridHeightDiff/*- 20*/, 'true');						                
+//						jQuery("#jqGrid" + formIdx).jqGrid('setGridWidth',paneState.innerWidth - gGridWidthDiff, 'true'); //18ok 15nieok
+			
+            var rowNumbers = false;
+            var multiSelect = false;
+            var multiBoxOnly = false;
+
+			if (gridHeight<=0) {
+				gridHeight = 200;
+			}
+            
+			$("#" + session.grids[gridIdx].jqGridElement).jqGrid({
+/****************************************************************************************/
+	/*height: "auto",*/ /*dostosowuje się do ilości danych*/
+		height: gridHeight,
+		autowidth: true,
+		shrinkToFit: false,
+
+		datatype: "local",	
+		rownumbers: rowNumbers,
+		multiselect: multiSelect,
+		multiboxonly: multiBoxOnly,
+		viewrecords: true,
+		pgbuttons: false,
+		pginput: false,
+		caption: "",
+		altRows: false,
+		scroll:1,
+		
+	/*	footerrow: bGridFooter,
+		userDataOnFooter: bGridFooter,*/              																
+/***************************************************************************************/				
+				/*data: mydata,*/
+                /*			data: mydata,*/
+                /*altRows: false,
+                pgbuttons: false,
+                pginput: false,*/
+/*                height: gridHeight,*/
+				/*height: "auto",*/
+                /*autowidth: true,*/
+                /*shrinkToFit: false,*/
+
+             
+                
+                
+                
+                
+                /*scroll: 1,*/
+				
+				/*rowNum: 2,*/
+
+
+                /*footerrow: bGridFooter,
+                userDataOnFooter: bGridFooter,*/
+
+
+                colModel: colModel,
+				beforeSelectRow: function (idNewSelected) {
+					//console.log("beforeSelectRow " + idNewSelected + " " + objectLength(gGrids[gridId].gSelectedIds));
+					var idOldSelected = jQuery(this).jqGrid('getGridParam','selrow'); 
+					if (idOldSelected==idNewSelected) {
+						jQuery(this).jqGrid('resetSelection');
+					}
+					return true;
+				},				
+				onSelectRow: function(ids) { 
+					status(1, "ids " + ids);
+					if (usersList==1) {
+						var thisAction;
+						for (var iItem in session.grids[gridIdx].object.menu) {						
+							if (session.grids[gridIdx].object.menu[iItem].shortcut && session.grids[gridIdx].object.menu[iItem].shortcut=="click") {
+								thisAction = session.grids[gridIdx].object.menu[iItem].action;
+							}
+						}
+						if (thisAction) {
+							action(thisAction, formIdx, gridIdx);
+						}
+					}
+					/*if(ids == null) {
+						ids=0; 
+						if(jQuery("#list10_d").jqGrid('getGridParam','records') >0 ) { 
+							jQuery("#list10_d").jqGrid('setGridParam',{url:"subgrid.php?q=1&id="+ids,page:1});
+							jQuery("#list10_d").jqGrid('setCaption',"Invoice Detail: "+ids) 
+							.trigger('reloadGrid'); 
+						}
+					} else { 						
+						jQuery("#list10_d").jqGrid('setGridParam',{url:"subgrid.php?q=1&id="+ids,page:1}); 
+						jQuery("#list10_d").jqGrid('setCaption',"Invoice Detail: "+ids)
+						.trigger('reloadGrid');
+					}*/
+				},
+				ondblClickRow: function(id) {				
+					var thisAction;
+					for (var iItem in session.grids[gridIdx].object.menu) {						
+						if (session.grids[gridIdx].object.menu[iItem].shortcut && session.grids[gridIdx].object.menu[iItem].shortcut=="dblclick") {
+							thisAction = session.grids[gridIdx].object.menu[iItem].action;
+						}
+					}
+					//alert(id + " " + JS(session.grids[gridIdx].object.menu));
+					if (thisAction) {
+						action(JS(thisAction), formIdx, gridIdx);
+					}
+					/*
+					if (gForms[formId].editMode=="select") {
+						//var grid = "#gridRelacje" + formId;
+						var grid = "#" + gridId;
+						var current=getCurrentId(grid);
+
+						if (typeof gForms[formId].selectValueInto == "function") {
+							gForms[formId].selectValueInto(current, formId, entityId, grid, callerFormId);
+						} else {
+							selectValueReturn(current, formId, entityId, grid, callerFormId);
+						}
+						$("#relacje" + formId).dialog("close");
+						
+					} else {
+						if (gForms[formId].editMode=="mainView") {
+							$("#btnEdit" + entityId).trigger('click');				
+						} else {
+							$("#edytuj" + formId + "_" + entityId).trigger('click');
+						}
+					}*/
+				}				
+            });
+			$("#" + session.grids[gridIdx].jqGridElement).jqGrid('bindKeys');
+			
+			// ukrycie nagłówka
+			if (usersList==1) {
+				var grid = $("#" + session.grids[gridIdx].jqGridElement);
+				var gview = grid.parents("div.ui-jqgrid-view");
+				gview.children("div.ui-jqgrid-hdiv").hide();
+			}
+
+        	
+			if (false) {
+				var htmlSrc = ""; 
+				var treedata = { "id": gridIdx };
+				htmlSrc += 
+					"<br>" +
+					"<div id='pagingDiv" + treedata.id + "' align=\"right\">" +
+						"<nobr>" +
+						"<button id=\"firstPage\" onclick=\"firstPage('grid" + treedata.id + "');\"><<</button>&nbsp;" +
+						"<button id=\"prevPage\" onclick=\"prevPage('grid" + treedata.id + "');\"><</button>" +
+						"&nbsp;&nbsp;" +
+						"<label id=\"pagingStatus" + treedata.id + "\"></label>" +
+						"&nbsp;&nbsp;" +
+						"<button id=\"nextPage\" onclick=\"nextPage('grid" + treedata.id + "');\">></button>&nbsp;" +
+						"<button id=\"lastPage\" onclick=\"lastPage('grid" + treedata.id + "');\">>></button>" +
+						"</nobr>" +
+					"</div>";						
+				//$("#grid" + gridIdx).append($(htmlSrc));
+                $("#grid_container" + gridIdx).append($(htmlSrc));
+                
+			}
+			
+			
+			
+			if (usersList!=1) {
+				toolBarCreate("default", undefined, formIdx, gridIdx, arg.menu);
+				session.forms[formIdx].outerLayout.resizeAll();
+			}
+			
+			
+            callback(formIdx, gridIdx, mydata);
+
+        }
+
+		//setRowData 
+	//	   $('#mygrid').setRowData(lastSel,{'id':newId});
+//    $('#'+lastSel).attr("id",newId);
+
+	
+		function gridDataLoad(formIdx, gridIdx, mydata)
+		{
+			//$('#grid').trigger( 'reloadGrid' );
+
+			$("#" + session.grids[gridIdx].jqGridElement).clearGridData();			
+			var colModel = session.grids[gridIdx].colModel;
+		    if (mydata) {
+                for (var i in mydata) {
+                    var row = {};
+
+                    for (var col in colModel) {					
+                        row[colModel[col]["name"].toLowerCase()] = mydata[i][colModel[col]["name"].toLowerCase()];
+						//'hidden': ukryty
+                    }
+                    
+					//if (row.email) {		// todo zdefiniować które pole jest kluczem głównym
+					if (session.grids[gridIdx].userslist) {
+						$("#" + session.grids[gridIdx].jqGridElement).jqGrid('addRowData', row.email, row);
+					} else {
+						$("#" + session.grids[gridIdx].jqGridElement).jqGrid('addRowData', i + 1, row);
+					}
+					
+					//("#" + jqTableName).jqGrid('addRowData', RowId, feature);
+                }
+
+                /*for (var i in mydata) {
+                    $("#jqGrid").jqGrid('addRowData', i + 1, {
+                        "blokadato": mydata[i]["BLOKADATO"],
+                        "pozycja": mydata[i]["POZYCJA"],
+                        "kod": mydata[i]["KOD"],
+                        "koddostawcy": mydata[i]["KODDOSTAWCY"],
+                        "nazwa": mydata[i]["NAZWA"],
+                        "ilosc2": mydata[i]["ILOSC2"],
+                        "netto": mydata[i]["ILOSC2"]
+                    });*/
+                /*$("#jqGrid").jqGrid('addRowData',i+1, {
+                    "id": mydata[i]["ID"],
+                    "magkod": mydata[i]["MAGKOD"],
+                    "data1": mydata[i]["DATA1"],
+                    "status": mydata[i]["STATUS"],
+                    "dokument": mydata[i]["DOKUMENT"],
+                    "nazwakh": mydata[i]["NAZWAKH"],
+                    "wart_b": mydata[i]["WART_B"]
+                }); */
+                // wczytanie pierwszego grida
+                //var rowid = $("#jqGrid").getDataIDs()[0];
+                //jQuery("#jqGrid").setSelection(rowid, true);
+                //}
+            }
+
+
+//			jQuery("#" + session.grids[gridIdx].jqGridElement).setRowData( "michal.wypustek@gmail.com", { stan: "*" });
+			
+		}
+		
+        /**
+        *  Ustalenie wysokości grid-a
+        *  @param Szerokość oraz wysokość obiektu nadrzędnego oraz czy mamy ustalić wysokość grida czy tylko pobrać
+        *  @return Tablica z wysokością i szerokością
+        */
+
+        function getOrSetGridWidthAndHeight(parentWidth, parentHeight, doSet, formIdx) {
+            var ret = [];
+
+            if (!parentWidth) {
+                parentWidth = jQuery("grid" + formIdx).innerWidth();
+            }
+            if (!parentHeight) {
+                parentHeight = jQuery("grid" + formIdx).innerHeight(); //grid_container
+            }
+
+            var gridWidth = parentWidth-session.gGridWidthDiff;
+            var gridHeight = parentHeight-session.gGridHeightDiff;
+
+            if (doSet) {
+                var mygrid = jQuery("#jqGrid" +  formIdx);
+				//var mygrid = jQuery("#grid_container" +  formIdx);
+                mygrid.jqGrid('setGridWidth', gridWidth + "px"); //.ui-jqgrid
+                mygrid.jqGrid('setGridHeight', gridHeight + "px");
+            }
+            ret = [gridWidth, gridHeight];
+            return ret;
+
+            ///////////////
+            //var header_height=$("thead:first tr.ui-jqgrid-labels", mygrid[0].grid.hDiv).height();
+            /*
+            // jeżeli nagłówek nie ma standardowej wysokości
+            if (header_height!=12) {
+            console.log("gridHeight old "+ gridHeight);
+            gridHeight = gridHeight - (header_height-12);
+            console.log("gridHeight new "+ gridHeight);
+            jQuery("#grid" + gGrids[iii].entityId).jqGrid('setGridHeight', gridHeight + "px");
+            }*/
+            //////////////
+
+        }
+
+        /*
+        jQuery(window).bind('resize', function() {
+
+            var targetContainer = "#grid_container";
+            var targetGrid = "#jqGrid";
+
+            // Get width of parent container
+            var width = jQuery("#grid_container").attr('clientWidth');
+
+        alert(width);
+
+            if (width == null || width < 1){
+                // For IE, revert to offsetWidth if necessary
+                width = jQuery(targetContainer).attr('offsetWidth');
+            }
+            width = width - 2; // Fudge factor to prevent horizontal scrollbars
+            if (width > 0 &&
+                // Only resize if new width exceeds a minimal threshold
+                // Fixes IE issue with in-place resizing when mousing-over frame bars
+                Math.abs(width - jQuery(targetGrid).width()) > 5)
+            {
+                jQuery(targetGrid).setGridWidth(width);
+            }
+
+        }).trigger('resize');
+        */
+        /*height: "auto",*/ /*dostosowuje siÄ™ do iloĹ›ci danych*/
+        /*		height: gridHeight,*/
+
+        /*width: "auto",*/
+        /*width: 300,*/
+        /*		multiselect: multiSelect,
+                multiboxonly: multiBoxOnly,*/
+
+        if (false) {
+            /*
+			applyDefaultStyles: true,
+			north: {size: 40,resizable: false,closable: false,spacing_open: 0},
+			west: {size: 150,	resizable: true,closable: true,spacing_open: 0
+			}*/
+
+
+        }
+
+        function backend_prev(method, params, errorCallback, responseCallback) {
+			
+			if (/*method=="run" && */params.o && params.o=="<pomin>") {
+				responseCallback("<pomin>");
+				return;
+			}
+			
+			// cache obiektów
+			if (method=="getobject" && session.objs[params.o]) {
+				status("1", "***cached***" + params.o);
+				responseCallback(session.objs[params.o]);
+				return;
+			}
+			
+			/*var sessionId;
+            sessionId = getCookie("sysauth");
+            //console.log("getCookie " + sessionId);
+			*/
+
+            if (session.sessionId !== undefined) {
+                params["sysauth"] = session.sessionId;
+            }
+            //var headers = { "Content-Type": "application/json", "Cookie": sessionId, "test123": sessionId };
+
+			if (session.firstCall) {
+				params["firstcall"] = true;
+				session.firstCall = false;
+			}
+			
+			var start_time = new Date().getTime();
+		
+            $.fn.jayson({
+				url: "http://" + session.backendAdr + ":3000", // JQuery loads serverside.php //127.0.0.1
+                /*headers: headers,*/
+                method: method,
+                params: params,
+                error: errorCallback,
+                
+				response: function (data) {
+                    //console.log("jayson response " + JSON.stringify(data));
+			        var request_time = new Date().getTime() - start_time;
+					status(1/*formIdx*/, method + " " + JSON.stringify(params.o) + " (" + (request_time) + "ms)", request_time>50 ? true : false);
+                    if (data && data.error) {
+                        errorCallback(data.error.code, data.error.message);
+                    } else {
+						if (data.result.sessionObj) {
+							session.sessionObj = data.result.sessionObj;
+//							$("#user_1").text(session.sessionObj.user); 
+//							$("#menu_first_item").text(session.sessionObj.user); 							
+						}
+					
+						if (method=="getobject" && !session.objs[params.o]) {
+							session.objs[params.o] = data.result;
+						}
+                        responseCallback(data.result);
+                    }
+                    /*if (!data["sessionid"]) {
+                        doLogin();
+                    } else {
+                        responseCallback(data);
+                    }*/
+                }
+            });
+        }
+
+		function backend(method, params/*, errorCallback, responseCallback*/) {
+			return new Promise(function(resolve, reject) {
+				if (/*method=="run" && */params.o && params.o=="<pomin>") {
+					resolve("<pomin>");
+					return;
+				}
+				
+				// cache obiektów
+				if (method=="getobject" && session.objs[params.o]) {
+					status("1", "***cached***" + params.o);
+					resolve(session.objs[params.o]);
+					return;
+				}
+				
+				/*var sessionId;
+				sessionId = getCookie("sysauth");
+				//console.log("getCookie " + sessionId);
+				*/
+
+				if (session.sessionId !== undefined) {
+					params["sysauth"] = session.sessionId;
+				}
+				//var headers = { "Content-Type": "application/json", "Cookie": sessionId, "test123": sessionId };
+
+				if (session.firstCall) {
+					params["firstcall"] = true;
+					session.firstCall = false;
+				}
+				
+				var start_time = new Date().getTime();
+			
+				$.fn.jayson({
+					url: "http://" + session.backendAdr + ":3000", // JQuery loads serverside.php //127.0.0.1
+					/*headers: headers,*/
+					method: method,
+					params: params,
+					error: /*errorCallback*/reject,
+					
+					response: function (data) {
+						//console.log("jayson response " + JSON.stringify(data));
+						var request_time = new Date().getTime() - start_time;
+						//status(1/*formIdx*/, method + " " + JSON.stringify(params.o) + " (" + (request_time) + "ms)");
+                        status(1/*formIdx*/, method + " " + JSON.stringify(params.o) + " (" + (request_time) + "ms)", request_time>50 ? true : false);
+						if (data && data.error) {
+							//reject(data.error.code, data.error.message);
+							reject(data.error);
+						} else {
+							if (data.result.sessionObj) {
+								session.sessionObj = data.result.sessionObj;
+	//							$("#user_1").text(session.sessionObj.user); 
+	//							$("#menu_first_item").text(session.sessionObj.user); 							
+							}
+						
+							if (method=="getobject" && !session.objs[params.o]) {
+								session.objs[params.o] = data.result;
+							}
+							resolve(data.result);
+						}
+						/*if (!data["sessionid"]) {
+							doLogin();
+						} else {
+							responseCallback(data);
+						}*/
+					}
+				});
+
+			});
+		}
+		
+        function getCookie(name) {
+            var value = "; " + document.cookie;
+            var parts = value.split("; " + name + "=");
+            if (parts.length == 2) return parts.pop().split(";").shift();
+        }
+/*
+        function test1() {
+            //525
+            backend("run", { "o": 4381 }, 
+                function (result) {
+                    alert("error: " + JSON.stringify(result));
+                    doLogin();
+                },
+                function (result) {
+                    //alert("result: " + JSON.stringify(result));
+                    //$('div.ui-layout-west').text(JSON.stringify(result)); //"http://versio.pl/update/test/test.cgi?o=3905"
+                    //session.forms[formIdx].initContent('west');
+                    createMainTree(result, "");
+
+                    backend("run", { "o": 4366 },  507
+                        function (result) {
+                            alert("error: " + JSON.stringify(result));
+                            doLogin();
+                        },
+                        function (result) {
+                            //alert("createMainMenu");
+                            createMainMenu(result, "");
+
+                        }
+                    );
+
+                }
+            );
+        }*/
+
+
+        function createMainTree(data, formIdx) {
+            /*
+                $("#tree").fancytree({
+                    checkbox: true,
+                    activate: function (event, data) {
+                        $("#echoActive").text(data.node.title);
+                        //              alert(node.getKeyPath());
+                        if (data.node.url)
+                            window.open(data.node.url, data.node.target);
+                    },
+                    deactivate: function (event, data) {
+                        $("#echoSelected").text("-");
+                    },
+                    focus: function (event, data) {
+                        $("#echoFocused").text(data.node.title);
+                    },
+                    blur: function (event, data) {
+                        $("#echoFocused").text("-");
+                    },
+                    lazyLoad: function (event, data) {
+                        // Simulate a slow ajax request
+                        var dfd = new $.Deferred();
+                        data.result = dfd.promise();
+                        window.setTimeout(function () {
+                            dfd.resolve([
+                              { title: "Lazy node 1", lazy: true },
+                              { title: "Simple node 2", select: true }
+                            ]);
+                        }, 1500);
+                    }
+                });
+            */
+            // opis: http://donik-fancytree.googlecode.com/hg/doc/tutorial.html
+            // ui.fancytree.min.css  usunąłem ;border:1px dotted gray (obwódka wokół drzewka)
+            var tree = $("#tree" + formIdx);
+            tree.fancytree({
+                activeVisible: true, // Make sure, active nodes are visible (expanded).
+                aria: false, // Enable WAI-ARIA support.
+                autoActivate: true, // Automatically activate a node when it is focused (using keys).
+                autoCollapse: false, // Automatically collapse all siblings, when a node is expanded.
+                autoScroll: false, // Automatically scroll nodes into visible area.
+                clickFolderMode: 4, // 1:activate, 2:expand, 3:activate and expand, 4:activate (dblclick expands)
+                checkbox: false, // Show checkboxes.
+                debugLevel: 2, // 0:quiet, 1:normal, 2:debug
+                disabled: false, // Disable control
+                focusOnSelect: false, // Set focus when node is checked by a mouse click
+                generateIds: false, // Generate id attributes like <span id='fancytree-id-KEY'>
+                idPrefix: "ft_", // Used to generate node id´s like <span id='fancytree-id-<key>'>.
+                icons: false, // Display node icons.		// zmienione
+                keyboard: true, // Support keyboard navigation.
+                keyPathSeparator: "/", // Used by node.getKeyPath() and tree.loadKeyPath().
+                minExpandLevel: 1, // 1: root node is not collapsible
+                quicksearch: false, // Navigate to next node by typing the first letters.
+                selectMode: 2, // 1:single, 2:multi, 3:multi-hier
+                tabbable: true, // Whole tree behaves as one single control
+                titlesTabbable: false // Node titles can receive keyboard focus
+                ,
+                postinit: function (isReloading, isError) {
+                    this.reactivate();
+                },
+                focus: function (event, data) {
+                    // Auto-activate focused node after 2 seconds
+                    data.node.scheduleAction("activate", 2000);
+                },
+
+                lazyLoad: function (event, data) {
+                    data.result = [];
+                },
+
+                activate: function (event, data) {
+                    var node = data.node;
+                    //alert(JSON.stringify(data));
+                    action(node.data.url, formIdx);
+                    /*
+                    alert(node + " " + node.data.url + " " + node.data.href);
+                    // Use <a> href and target attributes to load the content:
+                    if (node.data.href) {
+                        // Open target
+                        //window.open(node.data.href, node.data.target);
+                        console.log(node.data.href);
+                        eval(node.data.href);
+                        // or open target in iframe
+                        //                $("[name=contentFrame]").attr("src", node.data.href);
+                    }*/
+
+                    //var node = tree.getNodeByKey("k2");
+                    //alert(node);
+                }
+            });
+			
+			tree.formIdx = formIdx;
+
+            ///////////////////////////////
+            var obj = JSON.parse(data);
+            $("#tree" + formIdx).fancytree("getRootNode").addChildren(obj);
+            //tree.fancytree("getRootNode").addChildren(obj);
+
+
+
+
+            /////////////////////////////
+
+
+            tree.fancytree("getTree").visit(function (node) {
+                node.setExpanded(true);
+            });
+
+            //tree.activateKey("#k2");//coś nie działa
+            return;
+            /*
+                var result = data;
+                var resp = "";
+                resp += "  <pre>\n";
+                var menuNode;
+                menuNode = result["MainMenu"]["Menu"];
+                for (var i in menuNode) {
+                    resp += menuNode[i]["$"]["Name"] + "\n";
+                    var menuNode2 = menuNode[i]["Menu"];
+                    for (var i in menuNode2) {
+                        var onClickTxt = "alert('" + menuNode2[i]["$"]["Action"] + "');"; //
+                        var gridId = menuNode2[i]["$"]["Action"].split("?")[2];
+                        //var onClickTxt = "$('#grid').load('" + srvAdr + "?o=" + gridId + "');"; //div.ui-layout-center
+                        var onClickTxt = "gridCreate2(" + gridId + ");";
+
+                        //var onClickTxt = "alert('yyyyyy');";
+                        resp += "<div id='aaabbb' onClick=\"" + onClickTxt + "\">   " + menuNode2[i]["$"]["Name"] + "\n</div>";
+                        //proc='" + menuNode2[i]["$"]["Name"] + "'
+                    }
+                }
+                resp += "  </pre>\n";
+            */
+            /*resp += "  </body>\n";
+            resp += "</html>\n";*/
+
+
+
+            //$('div.ui-layout-west').html(resp); //"http://versio.pl/update/test/test.cgi?o=3905"
+            //	session.forms[formIdx].initContent('west');
+
+            /*
+        alert(JSON.stringify(data));
+        //	$('div.ui-layout-west').text(JSON.stringify(result)); //"http://versio.pl/update/test/test.cgi?o=3905"
+        //	outerLayout.initContent('west');
+
+
+            //alert(jQuery("#treeTmpl" ).html());
+
+            var str = jQuery("#treeTmpl" ).text(); //"<% if (user) { %><h2><%= user.name %></h2><% } %>";
+
+            var data = {};
+            data.user = {};
+            data.user.name = "ajajaja";
+            var options = {};
+
+            var renderResult = ejs.render(str, data, options);
+
+            //alert(renderResult);
+
+            $('div.ui-layout-west').text(renderResult); //"http://versio.pl/update/test/test.cgi?o=3905"
+            outerLayout.initContent('west');
+        */
+
+        }
+
+        function createMainMenu(data, formIdx) {
+			if (typeof data=="string") {
+				data = JSON.parse(data);
+			}
+            //var str = jQuery("#mainMenuTmpl").html(); //"<% if (user) { %><h2><%= user.name %></h2><% } %>";
+			//data["formIdx"] = formIdx;
+
+			var renderResult = parseMenu(data, formIdx);
+            /*
+			var options = {};
+
+            str = str.replace(/\&lt\;\%/g, "<\%");
+            str = str.replace(/\%\&gt\;/g, "\%>");
+
+            var renderResult = ejs.render(str, data, options);*/
+
+            jQuery("#menu-bar" + formIdx).show();
+            //jQuery("ul.main-menu").html(renderResult);
+			jQuery("#mainmenu" + formIdx).html(renderResult);
+			
+
+            //MainMenu().init();
+            //window.MainMenu.init();
+
+            //$('div.ui-layout-north').text(renderResult); //"http://versio.pl/update/test/test.cgi?o=3905"
+            session.forms[formIdx].outerLayout.initContent('north');
+
+            //new MainMenu(formIdx).init();
+			var mainMenu = new MainMenuObj(formIdx);
+			mainMenu.init();
+//.text($("#thisothername").attr("value"));
+			//$("#menu_first_item").val(session.sessionObj.user);							
+//			$("#menu_first_item").attr("value", session.sessionObj.user);							
+			
+			
+	//		$("#menu_first_item").contents().filter(function(){ return this.nodeType == 3; }).filter(':first').text("change text");			
+	
+	 //$("#menu_first_item").first().text("dddd");
+	 
+	 var your_div = document.getElementById('menu_first_item');
+	var text_to_change = your_div.childNodes[0];
+	text_to_change.nodeValue = session.sessionObj.user;
+			
+			
+        }
+		
+		function parseMenu(json, formIdx)
+		{
+			var retStr = "";
+			for (var i in json.MainMenu["Menu"]) {
+				var menuNode = json.MainMenu["Menu"][i];
+				retStr += '<li id="menu_first_item">';
+				
+				if (menuNode["Menu"]) {
+					retStr += menuNode["Name"];
+				} else {
+					retStr += "<a href='javascript:action(\"" + menuNode["Action"] + "\"," + formIdx + ")'>" + menuNode["Name"] + "</a>";
+				};
+				
+				if (menuNode["Menu"]) {
+					retStr += '<ul>';
+					for (var ii in menuNode["Menu"]) {
+						var menuNode2 = menuNode["Menu"][ii];
+						retStr += '<li>';
+
+						if (menuNode2["Menu"]) { 
+							retStr += menuNode2["Name"];
+						} else {							
+							retStr += "<a href='javascript:action(\"" + menuNode2["Action"] + "\"," + formIdx + ")'>" + menuNode2["Name"] + "</a>";
+						};
+
+						if (menuNode2["Menu"]) {
+							retStr += '<ul>';
+							for (var iii in menuNode2["Menu"]) {
+								var menuNode3 = menuNode2["Menu"][iii];
+								retStr += '<li>';
+
+								if (menuNode3["Menu"]) {
+									retStr += menuNode3["Name"];
+								} else {
+									retStr += "<a href='javascript:action(\"" + menuNode3["Action"] + "\"," + formIdx + ")'>" + menuNode3["Name"] + "</a>";
+								};
+
+								retStr += '</li>';
+							}
+							retStr += '</ul>';
+						};
+						retStr += '</li>';
+					}		
+					
+					retStr += '</ul>';
+				};
+				retStr += '</li>';
+			};
+			return retStr;			
+		}
+
+        function gridDataRetrieve(gridIdx, gridId, arg1, formIdx, callback) {
+            arg1 = arg1 || [];            
+            
+            //$('#grid').load('" + srvAdr + "?o=" + gridId + "');"; //div.ui-layout-center
+
+            var params = { "o": gridId, "arg1": arg1 };
+            if (gridIdx) {
+                params.pagingCurrentPage = session.grids[gridIdx]["pagingCurrentPage"];
+                params.pagingPageCount = session.grids[gridIdx]["pagingPageCount"];
+                params.pagingPageSize = session.grids[gridIdx]["pagingPageSize"];
+            } else {
+                params.pagingCurrentPage = 1;
+                params.pagingPageCount = -1; // nieznany
+                params.pagingPageSize = 25;
+            }
+            backend("run", params).then(
+                function (result) {
+                    //$('#grid_container').text(JSON.stringify(result));
+					session.forms[formIdx].layout.main = gridId;
+
+                    if (gridIdx) {
+                        if (result.data.pagingPageCount) {
+                            session.grids[gridIdx]["pagingPageCount"] = result.data.pagingPageCount;
+                        }
+                    }
+					
+					if (result.data.query && result.data.query.method && result.data.query.method=="myfriends") {
+						
+						//{"friends":{"787878":{},"aaaaaaaaacvccc":{},"qqqqqqqqqqq":{},"ccccccccccccc":{},"ytytytyty":{},"aaaaaaaaaabbbbb":{}}}
+						
+						var aFriends = [];
+						for (var i in session.sessionObj.friends) {
+							aFriends.push({
+								"name": i,
+								"email": i,
+								"status": "ok",
+								"stan": /*(i=="222222222222" ? "*": "")*/""
+							});
+						}
+						result.data.data = aFriends;
+						/*result.data.data = [
+							{ "name": "Karmenka Wypustek", "email": "karmena.wypustek@gmail.com", "status": "Aktywny" },
+							{ "name": "Barbara Górska", "email": "barbara.izagorska@gmail.com", "status": "Zaproszony" }
+						];*/
+						var colModel = result.data.attribute;
+						for (var i in colModel) {
+							if (colModel[i].name=="stan") {
+								colModel[i].formatter = function (cellvalue, options, rowObject) {								
+									//var html = "<img src=' /images/icons.png' alt='my image' style='width:12px;background-position: -15px -255px;background-size:auto;background-repeat:no-repeat;display:inline-block;height:12px;'/>";
+									var html;
+									if (cellvalue=="*") {
+										html = "<i class='ikonka-aktywonsci' />";
+									} else {
+										html = "";
+									}
+									//var html = cellvalue " " + options + " " + rowObject;
+									
+									
+									return html;
+								}
+							};
+						}
+
+					}			 					
+					
+					if (result.data.query && result.data.query.method && result.data.query.method=="mygroups") {
+						
+						var aGroups = [];
+						for (var i in session.sessionObj.groups) {
+							aGroups.push({
+								"name": i,
+								"status": "ok"
+							});
+						}
+						result.data.data = aGroups;
+						var colModel = result.data.attribute;
+						for (var i in colModel) {
+							if (colModel[i].name=="stan") {
+								colModel[i].formatter = function (cellvalue, options, rowObject) {								
+									var html;
+									if (cellvalue=="*") {
+										html = "<i class='ikonka-aktywonsci' />";
+									} else {
+										html = "";
+									}
+									return html;
+								}
+							};
+						}
+					}			 					
+		
+					moment.locale("en");																									
+					if (result.data.query && result.data.query.method && result.data.query.method=="mail") {
+						for (var row in result.data.data) {
+							for (var field in result.data.data[row]) {
+								if (field=="date") {
+									var orgDate = result.data.data[row][field];
+									result.data.data[row][field] = moment(orgDate, "ddd, D MMM YYYY h:mm:ss ZZ").toJSON() + " " + orgDate;
+									//if (!result.data.data[row][field]) {
+									//	result.data.data[row][field] = orgDate;
+									//}
+									//var ret = moment(cellvalue, "ddd, D MMM YYYY h:mm:ss ZZ");
+								}
+							}
+						}
+						result.data.data = result.data.data.sort(function(a, b) {
+							//return parseFloat(a.time) - parseFloat(b.time);
+							if (!a.date) 
+								return -1;
+							if (!b.date) 
+								return 1;
+							return (-1)*a.date.localeCompare(b.date);
+						});
+					}
+		
+					if (result.data.query && result.data.query.method && (result.data.query.method=="mynewses" || result.data.query.method=="mynotes" || result.data.query.method=="mytodos" || result.data.query.method=="mail")) {
+						moment.locale("pl");											
+						var colModel = result.data.attribute;
+						for (var i in colModel) {
+							if (colModel[i].name=="time") {
+								colModel[i].formatter = function (cellvalue, options, rowObject) {								
+									try {
+										return moment(cellvalue).fromNow();
+									} catch (e) {
+										return e;
+									}
+								}
+							}						
+						}
+					}			 					
+
+
+					if (result.data.query && result.data.query.method && result.data.query.method=="mail") {
+						moment.locale("pl");												
+						var colModel = result.data.attribute;
+						for (var i in colModel) {
+							if (colModel[i].name=="date") {
+								colModel[i].formatter = function (cellvalue, options, rowObject) {								
+									try {
+										//return moment(cellvalue).fromNow();
+										//return moment(cellvalue).format("MMMM DD, YYYY");
+								//		var ret = moment(cellvalue, "ddd, D MMM YYYY h:mm:ss ZZ");
+								//		ret = ret.fromNow();										
+								//		return ret;
+								
+										return moment(cellvalue).fromNow();
+								
+										//return moment(new Date().getTime()).format("ddd, D MMM YYYY h:mm:ss ZZ");
+										//nie, 8 maj 2016 4:38:12 +0200
+										//Sun, 8 May 2016 4:39:08 +0200
+										//Thu, 28 Apr 2016 22:06:20 +0200
+										//return cellvalue;
+									} catch (e) {
+										return e;
+									}
+								}
+							}						
+						}
+					}			 					
+					
+					/*
+					if (result.data.query && result.data.query.method && result.data.query.method=="mynewses") {
+						
+						var aGroups = [];
+						for (var i in session.sessionObj.groups) {
+							aGroups.push({
+								"name": i,
+								"status": "ok"
+							});
+						}
+						result.data.data = aGroups;
+						var colModel = result.data.attribute;
+					}*/			 					
+									
+                    callback(result.data, formIdx, arg1);
+                },
+                function (err) {
+                    //errMsg("error: (4)", err);
+                    console.log("error: (4)", err);                            
+                    doLogin("1");
+                }				
+            );
+
+            /*
+            backend("run", {"o": 519},
+                function(result) {
+                    alert("error: " + JSON.stringify(result));
+                    doLogin();
+                },
+                function(result) {
+                    //alert("result: " + JSON.stringify(result));
+                    //$('div.ui-layout-west').text(JSON.stringify(result)); //"http://versio.pl/update/test/test.cgi?o=3905"
+                    //outerLayout.initContent('west');
+                    createMainTree(result);
+                }
+            );
+            */
+        }
+
+        function gridRefresh(gridIdx)
+        {
+            //var quickFind = jQuery("#searchInp" + session.grids[gridIdx].entityId).val();
+            var formIdx = session.grids[gridIdx].formIdx;                
+            gridDataRetrieve(gridIdx, session.forms[formIdx].layout.main, [], formIdx, function(data, formIdx, arg1) {
+                gridDataLoad(formIdx, gridIdx, data.data);
+            });
+        }
+        
+        
+        function createText(gridId, arg1, formIdx) {
+            //$('#grid').load('" + srvAdr + "?o=" + gridId + "');"; //div.ui-layout-center
+
+			backend("run", { "o": gridId, "arg1": arg1 }).then(
+                function (result) {
+					configureInnerLayout({"north": true, "center": true, "south": false, "grid": false}, formIdx);				
+					toolBarCreate("text", undefined, formIdx, undefined); //objectId
+                    $("#jqGrid" + formIdx).html(prepareText(result.data));
+                },
+				function (err) {
+                    //errMsg("error: (5)", err);
+                    console.log("error: (5)", err);                            
+                    doLogin("1");
+                }				
+			);
+			
+            
+			/*backend("run", { "o": gridId, "arg1": arg1 },
+                function (errorCode, errorMessage) {
+                    alert("error: (5)" + errorCode + " " + errorMessage);
+                    doLogin("1");
+                },
+                function (result) {
+                    //$('#grid_container').text(JSON.stringify(result));
+                    //gridCreate(result);
+                    
+					configureInnerLayout({"north": true, "center": true, "south": false, "grid": false}, formIdx);
+					
+					toolBarCreate("text", undefined, formIdx, undefined); //objectId
+
+					
+				//	if ($('#jqGrid')) {
+                //        $('#jqGrid').jqGrid('GridUnload'); // utworzenie na nowo grid-a
+                //        //$('#jqGrid').clearGridData();   // jeżeli tylko dane chcemy wypełnić
+                //    }
+
+                    //$('div.ui-layout-center').text(JSON.stringify(result));
+                    //jQuery(".ui-layout-north").hide();
+            //        jQuery("#actiondiv").hide();
+
+                    $("#jqGrid" + formIdx).html(prepareText(result.data));
+
+                }
+            );*/
+        }
+
+        function prepareText(arg1)
+        {
+			var ret = arg1;
+			ret = ret.replace(/\r\n/g, "<br />");
+			return  ret;
+        }
+
+        function doLogin(formIdx) {
+            //http://stackoverflow.com/questions/503093/how-can-i-make-a-page-redirect-using-jquery
+            // similar behavior as an HTTP redirect
+            window.location.replace("/login.html");
+
+            // similar behavior as clicking on a link
+            //window.location.href = "http://stackoverflow.com";            
+            return;
+            
+			removeLayout("bodydiv", formIdx, "outer");
+								
+			var str = jQuery("#loginTmpl").html();
+			//$("body").append($(str));
+			$("#bodydiv").append($(str));
+			
+//			jQuery(".ui-layout-center").show();
+//			session.forms[formIdx].outerLayout.show("center");			
+			jQuery("#loginpanel").show();
+			
+			/*$("#user").keyup(function (event) {
+                if (event.keyCode == 13) {
+                    $("#submit").click();
+                }
+            });
+
+            $("#pass").keyup(function (event) {
+                if (event.keyCode == 13) {
+                    $("#submit").click();
+                }
+            });*/
+
+            var email, pass;
+            $("#submit").click(function (e) {
+                var user = $("#user").val();
+                var pass = $("#pass").val();
+                var hashHex = calcHash(pass);
+
+                // http://stackoverflow.com/questions/21191336/getting-chrome-to-prompt-to-save-password-when-using-ajax-to-login/33113374#33113374
+                e.preventDefault();
+                setTimeout(function(){
+                    e.target.parentNode.removeChild(e.target); // Or alternatively just hide the form: e.target.style.display = 'none';
+
+
+                    // This is working too!!! (uncomment the history.xxxState(..) line above) (it works when the http response is a redirect or a 200 status)
+                    //var request = new XMLHttpRequest();
+                    //request.open('POST', '/success.html', true); // use a real url you have instead of '/success.html'
+                    //request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+                    //request.send();
+                    
+                    backend("login", { "user": user, "hashhex": hashHex }).then(
+                        function (result) {
+                            history.replaceState({success:true}, 'title', "/index.html");
+
+                            session.firstCall = true; // spowoduje odświeżenie danych o sesji, nazwa użytkownika itd.
+
+                            //alert("result: " + JSON.stringify(result));
+                            //$('div.ui-layout-west').text(JSON.stringify(result)); //"http://versio.pl/update/test/test.cgi?o=3905"
+                            //outerLayout.initContent('west');
+                            //data_set_cookie = data.match(/Set-Cookie:\s([^;]+);/)[1];
+                            var data_set_cookie = result.data;
+                            //createCookie(data_set_cookie.split("=")[0],data_set_cookie.split("=")[1],365); //sets cookie for 1 year
+
+                            console.log("createCookie " + data_set_cookie);
+                            createCookie("sysauth", data_set_cookie, /*365*/undefined); //sets cookie for 1 year
+                            session.sessionId = data_set_cookie; //getCookie("sysauth");
+                            jQuery("#loginpanel").remove();						
+                            formCreate(1, 1, {});
+                        },
+                        function (err) {
+                            status(1, "errorCallback " + JSON.stringify(err));
+                            errMsg("errorCallback", err);
+                        }					
+                    );
+                    
+                    
+                    
+                }, 1);
+                
+                                
+            });
+			
+			$("#submit_register").click(function () {
+                var user = $("#user_register").val();
+
+                backend("register", { "user": user }).then(
+                    function (result) {
+                        alert("Na podany adres e-mail został wysłany mail z dalszymi informacjami.");
+
+                        //formCreate();
+                    },
+                    function (err) {
+						errMsg("errorCallback (2)", err);
+                    }					
+                );
+            });
+        }
+
+		//oAction.params.formObjectId, oAction.params.formParams
+        function formCreate(formIdx, objectId, formParams, callbackErr, callback) {
+
+               var caller = {};
+               caller.formIdx = formIdx;
+			// ustalenie identyfikatora formularza, dla głównego okna wynosi zawsze 1 dla pozostałych ustalamy pierwszy wolny idx
+			if (!(formIdx==1 && objectId==1)) {
+				var newFormIdx = 1;
+				while (session.forms[String(newFormIdx)]) {
+					newFormIdx++;
+				}
+				formIdx = newFormIdx;
+			}
+			session.forms[formIdx] = {
+				"formParams": formParams,
+                "caller": caller
+			};			
+			
+			if (formIdx==1 && objectId==1) {
+			
+				removeLayout("bodydiv", "1", "outer");
+
+				backend("getobject", { "o": objectId }).then(
+					function (result) {						
+						session.forms[formIdx].layout = JSON.parse(result.data);
+						session.forms[formIdx].layout.form = objectId;											
+						
+						createLayoutElements("bodydiv", "1", "outer");								
+						showLayout(formIdx, undefined, 
+							function() {
+								status(1/*formIdx*/, "Ready: " + (session.request_time_ready) + "ms");
+								action("GRID?CREATE?4389?PreviewID=-1,userslist=1", formIdx);															
+								//session.socket = io("http://localhost:5678"); // komunikacja uruchamiana po pojawieniu się grida w przeciwnym wypadku grid nie zostanie poprawnie odświeżony jeżeli pojawi się zdarzenie np. login
+								session.socket = io("http://" + session.backendAdr + ":5678");
+								session.chat = new Chat(formIdx);								
+								//selector: '#mytextarea'								
+
+								if (session.localServer) {
+									session.localServer.close();
+								}
+								indexedDbOpen();
+								return;
+							}
+						);
+					},
+					function (err) {
+						//errMsg("error: (6)", err);
+                        console.log("error: (6)", err);
+						doLogin("1");
+						return;
+					}					
+				);			
+				return;
+			} else {
+			
+				var formWidth, formHeight;							
+				formWidth = formParams.width || Math.floor($('body').width()  * .70);
+				formHeight = formParams.height || Math.floor($('body').height() * .65)
+				
+				var formCaption;				
+				formCaption = formParams.gridTitle || formParams.caption || "Formularz";
+				
+				var dialogBoxDiv = $("<div>").attr("id", "dialogBox" + formIdx);
+				$("#dialogs").append(dialogBoxDiv);
+								
+				var modal;
+				if (typeof formParams.modal=="undefined") {
+					modal = true;
+				} else {
+					modal = formParams.modal;
+				}
+				
+				session.forms[formIdx].$dialogBox = $("#dialogBox" + formIdx);
+				session.forms[formIdx].$dialogBox.dialog({ 
+					title:		formCaption
+				,	width:		formWidth
+				,	height:		formHeight
+				,	autoOpen:	false
+				,	closeOnEsc:	true
+				,	modal:		modal
+				,	open:		function() {
+									if (!session.forms[formIdx].outerLayout) {
+										// init layout *the first time* dialog opens
+									
+										//session.forms[formIdx] = {};
+										// poniższy fragment zintegrować z funckja formCreate()
+										//var objectId;
+										//objectId = 4385; // todo definiowalne mus być
+										backend("getobject", { "o": objectId }).then(
+											function (result) {
+												session.forms[formIdx].layout = JSON.parse(result.data)
+												session.forms[formIdx].layout.form = objectId;													
+												
+												createLayoutElements("dialogBox" + formIdx, formIdx);
+												showLayout(formIdx, formParams.gridIdx, 
+													function() {
+//														session.forms[formIdx].dialogLayout = session.forms[formIdx].$dialogBox.layout( mainLayout_settings/*dialogLayout_settings*/ );
+
+														if (session.forms[formIdx].layout.buttons) {
+															var oButtons = {};
+															if (session.forms[formIdx].layout.buttons.select) {
+																oButtons["Wybierz"] = function() {};
+															}
+
+															if (session.forms[formIdx].layout.buttons.update) {
+																oButtons["Zapisz"] = function() {
+																	//var grid = "#gridRelDetails" + formId + "_"  + entityId;
+																	//var current=getCurrentId(grid);
+																	//jQuery("#" + gForms[formId].selectValueInto).val(current);
+																	//$(this).dialog("close");	
+
+																	//zapisz(null, entityId, undefined, /*gForms[formId].tablica*/null, entityName, undefined, formId); //zmienne
+																};
+															}
+
+															if (session.forms[formIdx].layout.buttons.updateAndClose) {
+																oButtons["Zapisz i zamknij"] = function() {
+																	//zapisz(null, entityId, undefined, null, entityName, undefined, formId, 1);					
+																	var actionType = session.forms[formIdx].layout.buttons.updateAndClose.type;										
+																	if (actionType=="saveEdit") {
+																		var tinymce_id = "res" + formIdx;									
+																		// Get content of a specific editor:
+																		var editContent = tinyMCE.get(tinymce_id).getContent();
+																					
+																		if (editContent!="") {
+																																					
+																			var oAction = {};																			
+																			if (!oAction.params) oAction.params = {};                                                                            
+                                                                                                                                                        
+                                                                            switch (session.forms[formIdx].formParams.entity) {
+                                                                                case "create":                                                                            
+                                                                                    oAction.method = "msgCreate";
+                                                                                    break;
+                                                                                    
+                                                                                case "update":
+                                                                                    oAction.method = "msgUpdate";
+                                                                                    if (session.forms[formIdx].formParams.gridId && String(session.forms[formIdx].formParams.gridId).length>0) {
+                                                                                        oAction.params[session.forms[formIdx].formParams.gridIdName] = session.forms[formIdx].formParams.gridId;
+                                                                                    } else {
+                                                                                        alert("Problem identyfikacji #147158");
+                                                                                        return;
+                                                                                    }
+                                                                                    
+                                                                                    break;
+                                                                                    
+                                                                                default:
+                                                                                    alert("Błąd #578185 " + session.forms[formIdx].formParams.entity);
+                                                                                    return;
+                                                                            }
+                                                                            
+                                                                            oAction.params.message = editContent;																			
+                                                                            oAction.params.type = session.forms[formIdx].formParams.type; //"news";
+                                                                            if (oAction.params.type=="news") {
+                                                                                oAction.params.recipient = "all";
+                                                                            }
+
+                                                                            backend(oAction.method, oAction.params).then(
+                                                                                function (result) {
+                                                                                    //gridDataRetrieve(session.forms[formIdx].layout.main, /*arg1*/"", formIdx, function(data, formIdx, arg1) {
+                                                                                    //	gridDataLoad(formIdx, gridIdx, data.data);
+                                                                                        
+                                                                                        //
+                                                                                        //session.forms[formIdx].caller.gridIdx
+                                                                                        //session.forms[formIdx].formParams.gridId
+                                                                                        var thisFormIdx = formIdx;
+                                                                                        gridDataRetrieve(session.forms[formIdx].caller.gridIdx, session.forms[session.forms[formIdx].caller.formIdx].layout.main, arg1, session.forms[formIdx].caller.formIdx, function(data, formIdx, arg1) {
+                                                                                            //gridCreate(data, formIdx, arg1);
+                                                                                            gridDataLoad(session.forms[formIdx].caller.formIdx, session.forms[formIdx].caller.gridIdx, data.data);
+                                                    //											alert("Zaproszenie zostało wysłane ");										
+                                                    
+                                                                                                session.forms[thisFormIdx].$dialogBox.dialog("close");									
+
+                                                                                        });
+                                                                                        
+                                                                                        
+                                                                                    //});
+                                                                                },
+                                                                                function (err) {
+                                                                                    errMsg("error: (10e)", err);
+                                                                                }									
+                                                                            );				
+                                                                            
+                                                                            
+																		} else {
+																			alert("Hejka, nie zapomniałeś napisać treści?");
+																		}
+																		
+																		
+																		
+																		
+																		
+																		
+																		
+																		
+																	} else {
+																		session.forms[formIdx].jsonForm.gridIdx = formParams.gridIdx;
+																		session.forms[formIdx].jsonForm.submit();
+																	}
+																	/*if (session.forms[formIdx].formUpdateAndClose) {
+																		session.forms[formIdx].formUpdateAndClose();
+																	} else {
+																		log(1, "Brak obsługi zdarzenia #0891467");
+																	}*/
+																};
+															}
+																
+															if (session.forms[formIdx].layout.buttons.updateAndNew) {						
+																oButtons["Zapisz i nowy"] = function() {
+																	//zapisz(null, entityId, undefined, null, entityName, undefined, formId, 2);
+																};
+															}
+
+															if (session.forms[formIdx].layout.buttons.close) {						
+																oButtons["Zamknij"] = function() {
+																	session.forms[formIdx].$dialogBox.dialog("close");	
+																};
+															}
+
+															if (session.forms[formIdx].layout.buttons.cancel) {						
+																oButtons["Anuluj"] = function() {
+																	session.forms[formIdx].$dialogBox.dialog("close");	
+																};
+															}
+
+															// setter
+															session.forms[formIdx].$dialogBox.dialog("option", "buttons", oButtons);
+														}
+
+
+													}
+												);
+												
+											},
+											function (err) {
+												//errMsg("error: (7)", err);
+                                                console.log("error: (7)", err);                            
+												doLogin("1");
+											}																						
+										);												
+									
+									} else {
+										alert("Błąd #123461");
+										// just in case - probably not required
+										session.forms[formIdx].outerLayout.resizeAll();
+									}
+								}
+				,	resize:		function(){ if (session.forms[formIdx].outerLayout) session.forms[formIdx].outerLayout.resizeAll(); }
+				,	close:		function(event, ui) { 
+				
+									var tinymce_id = "res" + formIdx;									
+									if (tinymce.editors.length > 0) {
+										//tinymce.execCommand('mceFocus', true, tinymce_id );       
+										tinymce.execCommand('mceRemoveEditor',true, tinymce_id);        
+										//tinymce.execCommand('mceAddEditor',true, tinymce_id);
+									}
+
+									removeLayout("dialogBox" + formIdx, formIdx, "dialog");
+				
+									$(this).dialog("destroy");
+									$(this).remove();
+									event.stopPropagation();
+									session.forms[formIdx] = undefined;																		
+								}
+				});
+
+				
+							
+				//<BUTTON id="dialogOpener"><B>Open Dialog</B></BUTTON>
+				//$('#dialogOpener').click(function(){ 
+
+				
+				session.forms[formIdx].$dialogBox.dialog('open'); 																						
+			}
+        }
+
+		function codeEditor(objectId, formIdx, thisWhat)		
+		{
+			backend("getobject", {"o": objectId }).then( //, "arg1": arg1
+				function (result) {
+					configureInnerLayout({"north": true, "center": true, "south": false, "codeeditor": true}, formIdx);
+					session.editor = ace.edit("editor" + formIdx);
+					
+					session.editor.height = 200;
+					session.editor.width = 200;
+					session.editor.setValue(result.data, -1/*moves cursor to the start*/); // or session.setValue   //
+					
+			//		jQuery("#editor").text(result);			
+					jQuery("#editor" + formIdx).show();
+					//session.editor.show();
+
+					//editor.setTheme("ace/theme/monokai");
+					session.editor.getSession().setMode("ace/mode/javascript");
+					
+					toolBarCreate("codeEditor", objectId, formIdx, undefined, undefined, {"objectPrivate": result.objectPrivate});					
+				},
+				function (err) {
+					errMsg("error: (8)", err);
+				}				
+			);	
+		}
+
+		function codeEditorUpdate(objectId, formIdx, oParams)
+		{
+            oParams = oParams || {};
+			if (session.editor) {
+				//var editor = ace.edit("editor");
+				//var objectSource = jQuery("#editor").text();			
+				var objectSource = session.editor.getValue(); // or session.getValue
+
+				var arg1 = objectSource; 
+				backend("updateobject", {"o": objectId, "arg1": arg1, "objectPrivate": oParams.objectPrivate }).then(
+					function (result) {
+						status(formIdx, "Zapisano obiekt: " + objectId + " " + result.data);
+					},
+					function (err) {
+						errMsg("error: (9)", err);
+					}					
+				);
+			} else {
+				alert("Brak otwartego edytora.");
+			}
+		}
+		
+        function createCookie(name, value, days) {
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                var expires = "; expires=" + date.toGMTString();
+            }
+            else var expires = "";
+            var cookieAdd = name + "=" + value + expires + "; path=/";
+            //alert("cookieAdd " + cookieAdd);
+            document.cookie = cookieAdd;
+        }
+
+
+        function action(arg, formIdx, gridIdx) {
+            
+			var doneAction = false; // czy akcja została obsłużona
+
+			// obsługa nowych wywołań action
+			var typeOfAction = "classic";
+			var oAction;
+			if (typeof arg == "object") {
+				typeOfAction = "json";			
+				oAction = jQuery.extend(true, {}, arg); // kopia obiektu ponieważ nie chcemy modyfikować oryginału
+			}
+			if (typeof arg == "string" && arg.indexOf("{")==0) {
+				typeOfAction = "json";
+				oAction = JSON.parse(arg);
+			}
+			
+			if (typeOfAction == "json") {
+				switch (oAction.method) {
+					//"action": {"method": "", "params": { "formId": 4385, "gridId": ":gridid" }}
+					case "formCreate":								
+						if (!oAction.params) {
+							oAction.params = {};
+						} 
+						if (!oAction.params.formParams) oAction.params.formParams = {};
+						
+						oAction.params.formParams.gridIdx = gridIdx;
+
+                        session.forms[formIdx].caller.gridIdx = gridIdx;
+                
+						var gridId = oAction.params.formParams.gridId;
+						if (gridId==":gridid" || gridId=="[[gridId]]") {
+							//var grid = "#jqGrid" + formIdx;
+							var grid = "#" + session.grids[gridIdx].jqGridElement
+							var gridId = getCurrentIds(grid, oAction.params.formParams.gridIdName, oAction.params.formParams.gridSelectMultiple);
+							if (!gridId) {
+								doneAction = true;
+								break;
+							}
+							oAction.params.formParams.gridId = gridId;
+							var gridTitle = getCurrentIds(grid, oAction.params.formParams.gridTitleName, oAction.params.formParams.gridSelectMultiple);
+							oAction.params.formParams.gridTitle = gridTitle;
+						}
+						oAction.params.formParams.caption = "Wiadomość";
+
+						formCreate(formIdx, oAction.params.formObjectId, oAction.params.formParams);
+						doneAction = true;
+						break;
+				
+					case "friendCreate":	
+						var friendEmail = prompt("Adres e-mail znajomego");
+						if (friendEmail) {
+							if (!oAction.params) oAction.params = {};
+							oAction.params.email = friendEmail;							
+							backend(oAction.method, oAction.params).then(
+								function (result) {
+									//jsonForm(objectId, result, formIdx);
+									session.firstCall = true; // wymusza odświeżenie listy znajomych
+									gridDataRetrieve(gridIdx, session.forms[formIdx].layout.main, /*arg1*/"", formIdx, function(data, formIdx, arg1) {
+										//gridCreate(data, formIdx, arg1);
+										gridDataLoad(formIdx, gridIdx, data.data);
+//											alert("Zaproszenie zostało wysłane ");										
+									});
+								},
+								function (err) {
+									errMsg("error: (10)", err);
+								}									
+							);				
+						}
+						doneAction = true;
+						break;
+
+					case "groupCreate":	
+						var groupName = prompt("Nazwa grupy");
+						if (groupName) {
+							if (!oAction.params) oAction.params = {};
+							oAction.params.name = groupName;							
+							backend(oAction.method, oAction.params).then(
+								function (result) {
+									//jsonForm(objectId, result, formIdx);
+									session.firstCall = true; // wymusza odświeżenie listy znajomych
+									gridDataRetrieve(gridIdx, session.forms[formIdx].layout.main, /*arg1*/"", formIdx, function(data, formIdx, arg1) {
+										//gridCreate(data, formIdx, arg1);
+										gridDataLoad(formIdx, gridIdx, data.data);
+//										alert("Zaproszenie zostało wysłane ");										
+									});
+								},
+								function (err) {
+									errMsg("error: (10b)", err);
+								}									
+							);				
+						}
+						doneAction = true;
+						break;
+						
+					case "msgCreate":	
+						var newsName = prompt("Aktualność");
+						if (newsName) {
+							if (!oAction.params) oAction.params = {};
+							oAction.params.message = newsName;
+							oAction.params.recipient = "all";
+							oAction.params.type = "news";
+
+//"user":"pawel.wypustek@gmail.com",
+//"recipient":["all"],
+//"sysauth":"5727a283-215e-442c-9562-2bcd39f7bcd9"
+							
+							backend(oAction.method, oAction.params).then(
+								function (result) {
+									//jsonForm(objectId, result, formIdx);
+									session.firstCall = true; // wymusza odświeżenie listy znajomych
+									gridDataRetrieve(gridIdx, session.forms[formIdx].layout.main, /*arg1*/"", formIdx, function(data, formIdx, arg1) {
+										//gridCreate(data, formIdx, arg1);
+										gridDataLoad(formIdx, gridIdx, data.data);
+//										alert("Zaproszenie zostało wysłane ");										
+									});
+								},
+								function (err) {
+									errMsg("error: (10k)", err);
+								}									
+							);				
+						}
+						doneAction = true;
+						break;
+
+					case "msgUpdate":	
+						if (!oAction.params) oAction.params = {};
+                
+						var gridId = oAction.params.gridId;
+						if (gridId==":gridid" || gridId=="[[gridId]]") {
+							var grid = "#" + session.grids[gridIdx].jqGridElement
+							var gridId = getCurrentIds(grid, oAction.params.gridIdName, oAction.params.gridSelectMultiple);
+							if (!gridId) {
+								doneAction = true;
+								break;
+							}
+							oAction.params.uid = gridId;
+						}
+
+                        // odczyt danych
+                        var oActionRead = { "params": {} }; 
+                        oActionRead.params.uid = oAction.params.uid;
+                        oActionRead.params.type = oAction.params.type;                        
+                        backend("msgRead", oActionRead.params).then(
+                            function (result) {
+                                var dataOrginal;
+                                if (result && result.data && result.data[0]) {
+                                    dataOrginal = result.data[0];
+                                } else {
+                                    dataOrginal = {};
+                                }
+                        
+                                for (var iField in oAction.params.data) {
+                                    
+                                    if (oAction.params.data[iField]=="[[prompt]]") {
+                                        var fieldValueOrginal = "";
+                                        if (dataOrginal[iField]) {
+                                            fieldValueOrginal = dataOrginal[iField];
+                                        }
+                                        var promptValue = prompt(iField, fieldValueOrginal);
+                                        if (promptValue) {
+                                            oAction.params.data[iField] = promptValue;
+                                        } else {
+                                            alert("Anulowano");
+                                            //doneAction = true;
+                                            return;
+                                        }
+                                        oAction.params.uid = gridId;
+                                    }
+                                }
+                                
+                                backend(oAction.method, oAction.params).then(
+                                    function (result) {
+                                        //jsonForm(objectId, result, formIdx);
+                                        session.firstCall = true; // wymusza odświeżenie listy znajomych
+                                        gridDataRetrieve(gridIdx, session.forms[formIdx].layout.main, arg1, formIdx, function(data, formIdx, arg1) {
+                                            //gridCreate(data, formIdx, arg1);
+                                            gridDataLoad(formIdx, gridIdx, data.data);
+        //										alert("Zaproszenie zostało wysłane ");										
+                                        });
+                                    },
+                                    function (err) {
+                                        errMsg("error: (10k)", err);
+                                    }									
+                                );				
+						
+                            },
+                            function (err) {
+                                errMsg("error: (10k)", err);
+                            }									
+                        );				
+
+						doneAction = true;
+						break;                        
+
+                        
+					case "msgDelete":	
+						var bTak = confirm("Usunąć ?");
+						if (bTak) {
+							if (!oAction.params) oAction.params = {};
+							//oAction.params.type = "news";
+////////////
+						
+                
+						var gridId = oAction.params.gridId;
+						if (gridId==":gridid" || gridId=="[[gridId]]") {
+							//var grid = "#jqGrid" + formIdx;
+							var grid = "#" + session.grids[gridIdx].jqGridElement
+							var gridId = getCurrentIds(grid, oAction.params.gridIdName, oAction.params.gridSelectMultiple);
+							if (!gridId) {
+								doneAction = true;
+								break;
+							}
+							oAction.params.uid = gridId;
+							//var gridTitle = getCurrentIds(grid, oAction.params.formParams.gridTitleName, oAction.params.formParams.gridSelectMultiple);
+							//oAction.params.formParams.gridTitle = gridTitle;
+						}
+
+
+
+			
+/////////////////            
+							backend(oAction.method, oAction.params).then(
+								function (result) {
+									//jsonForm(objectId, result, formIdx);
+									session.firstCall = true; // wymusza odświeżenie listy znajomych
+									gridDataRetrieve(gridIdx, session.forms[formIdx].layout.main, arg1, formIdx, function(data, formIdx, arg1) {
+										//gridCreate(data, formIdx, arg1);
+										gridDataLoad(formIdx, gridIdx, data.data);
+//										alert("Zaproszenie zostało wysłane ");										
+									});
+								},
+								function (err) {
+									errMsg("error: (10k)", err);
+								}									
+							);				
+						}
+						doneAction = true;
+						break;
+                        
+					case "objectCreate":	
+						var objectName = prompt("Nazwa obiektu");
+						if (objectName) {
+						
+							var objectType = prompt("Typ obiektu");
+							if (objectType) {
+															
+								oAction.params.objectName = objectName;
+								oAction.params.objectType = objectType;
+						
+								backend(oAction.method, oAction.params).then(
+									function (result) {
+										/*gridDataRetrieve(session.forms[formIdx].layout.main, "", formIdx, function(data, formIdx, arg1) {
+											gridDataLoad(formIdx, gridIdx, data.data);
+										});*/
+										alert("Ok\n" + JS(result));
+									},
+									function (err) {
+										errMsg("error: (10c)", err);
+									}									
+								);							
+							}
+						}
+						doneAction = true;
+						break;
+						
+////////////////							
+					case "editCreate":								
+						$("#bodydiv").append($("<div id=\"dialog\" title=\"TinyMCE dialog\" style=\"display: none\"><textarea>qqq</textarea></div>"));							
+						$("#dialog").dialog({
+							width: 800,
+							modal: true
+						});
+						/*$('textarea').tinymce({
+							toolbar: 'link',
+							plugins: 'link'
+						});						*/
+						
+						/*$('textarea').tinymce({
+						});*/
+						tinymce.init({ 
+							selector:'textarea',
+							height: 200,
+							plugins: ["advlist autolink lists link image charmap print preview anchor","searchreplace visualblocks code fullscreen","insertdatetime media table contextmenu paste code"],
+							toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | sizeselect | fontsizeselect",  
+							content_css: ["//fast.fonts.net/cssapi/e6dc9b99-64fe-4292-ad98-6974f93cd2a2.css","//www.tinymce.com/css/codepen.min.css"],
+                            fontsize_formats: "8pt 10pt 12pt 14pt 18pt 24pt 36pt"
+						});								  							
+
+//toolbar: "sizeselect | bold italic | fontselect",
+
+						doneAction = true;
+						break;				
+
+					case "localDbCreate":								
+						//done11
+						oAction.params = JSON.parse(prompt("dane", JSON.stringify(oAction.params)));
+						session.localServer.object.add(oAction.params)
+							.catch(function (err) {
+								alert(err);
+								// Handle other errors here
+								throw err;
+							})
+							.then( function ( item ) {
+								alert("item stored");
+							}
+						);
+						
+						doneAction = true;
+						break;				
+
+					case "localDbRead":								
+						session.localServer.object.query()
+							.all()
+							.execute()
+							.then(function (results) {
+								alert(JSON.stringify(results));
+						});
+						
+						doneAction = true;
+						break;				
+
+					case "imapRead":	
+						if (!oAction.params) oAction.params = {};
+						backend(oAction.method, oAction.params).then(
+							function (result) {
+								alert(JS(result));
+								//gridDataRetrieve(session.forms[formIdx].layout.main, /*arg1*/"", formIdx, function(data, formIdx, arg1) {
+								//	gridDataLoad(formIdx, gridIdx, data.data);
+								//});
+							},
+							function (err) {
+								errMsg("error: (10b)", err);
+							}															
+						);
+						doneAction = true;
+						break;
+						
+					case "objectBackend":	
+						if (!oAction.params) oAction.params = {};
+						backend(oAction.method, oAction.params).then(
+							function (result) {
+								alert(JS(result));
+								//gridDataRetrieve(session.forms[formIdx].layout.main, /*arg1*/"", formIdx, function(data, formIdx, arg1) {
+								//	gridDataLoad(formIdx, gridIdx, data.data);
+								//});
+							},
+							function (err) {
+								errMsg("error: (102b)", err);
+							}															
+						);
+						doneAction = true;
+						break;
+						
+
+						
+						
+					default:
+						alert("Action not found #879123: " + arg);
+						return;
+				}
+				
+				if (doneAction===true) {
+					return;
+				} else {
+					alert("Akcja nie została obsłużona #5346783 " + arg);
+				}
+			}
+            /*
+            if (arg == 1234) {
+                var gridId = 4367; //525;
+                //var gridId = 518;
+                var kodKreskowy = jQuery("#kodkreskowy").val();
+
+				status(formIdx, kodKreskowy);
+                gridDataRetrieve(gridIdx, gridId, arg1, formIdx, function(data, formIdx, arg1) {
+					gridCreate(data, formIdx, arg1);
+				});
+                return;
+            }*/
+
+
+            var aAction;
+			try {
+				if (arg.indexOf("?")>=0) {
+					aAction = arg.split("?");
+				} else {
+					aAction = [arg];
+				}
+			} catch (e) {
+				status(formIdx, e + " " + arg);
+				return;
+			}
+            switch (aAction[0]) {
+                case "MISC":
+                    switch (aAction[1]) {
+                        case "LOGOUT":
+                            //window.top.close();
+
+                            backend("logout", {/*"o": gridId, "arg1": arg1*/ }).then(
+                                function (result) {
+                                    doLogin("1");
+                                },
+                                function (err) {
+                                    //errMsg("error: (11)", err);
+                                    console.log("error: (11)", err);                            
+                                    doLogin("1");
+                                }								
+                            );
+                            doneAction = true;
+                            break;                        
+						
+						case "RESTARTSRV":
+                            //window.top.close();
+
+                            backend("restartsrv", {/*"o": gridId, "arg1": arg1*/ }).then(
+                                function (result) {
+                                    alert("Serwer został zrestartowany.");
+                                },
+                                function (err) {
+                                    //errMsg("error: (12)", err);
+                                    console.log("error: (12)", err);                            
+                                    doLogin("1");
+                                }								
+                            );
+                            doneAction = true;
+                            break;
+
+                        case "CLOSE":
+                            if (confirm("Zamknąć zakładkę ?")) {
+                                /*window.*///close();
+                                //window.open('','_self').close();
+
+                                //setTimeout(function(){var ww = window.open(window.location, '_self'); ww.close(); }, 1000);
+                                window.top.close();
+
+                            }
+                            doneAction = true;
+                            break;
+							
+							
+						case "CODEEDITOR":				
+							var objectId = aAction[2];
+							codeEditor(objectId, formIdx);												
+				            doneAction = true;
+                            break;            
+
+							
+						case "JSONFORM":				
+							var objectId = aAction[2];
+							var arg1 = ""; 
+							backend("getobject", {"o": objectId, "arg1": arg1 }).then(
+                                function (result) {
+									jsonForm(objectId, result.data, formIdx);
+                                },
+                                function (err) {
+                                    errMsg("error: (14)", err);
+                                }								
+                            );
+				
+							doneAction = true;
+                            break;    							
+							
+						
+						case "STARTCHAT":				
+							//session.chat = new Chat(formIdx);								
+							startChat(formIdx);
+							doneAction = true;
+                            break;    							
+
+						case "DESIGNON":
+						case "DESIGNOFF":						
+							localStorage.setItem("design", aAction[1]=="DESIGNON");
+							status(1, "Odśwież okno przeglądarki")
+							doneAction = true;
+                            break;    																									
+						
+						case "FRIENDCREATE":				
+							var friendEmail = prompt("Adres e-mail znajomego");
+							doneAction = true;
+                            break;    							
+							
+						case "MSG":				
+							alert(aAction[2]);
+							doneAction = true;
+                            break;    														
+						
+                    }
+                    break;
+
+                case "EXEC":
+                    switch (aAction[1]) {
+                        case "CALC":
+                            var url = "http://www.online-calculator.com/full-screen-calculator/";
+                            window.open(url, '_blank');
+                            doneAction = true;
+                            break;
+                    }
+                    break;
+
+                case "OBJ":
+                    switch (aAction[1]) {
+                        case "1004": /* o programie */
+                            var url = "http://versio.pl";
+                            window.open(url, '_blank');
+                            doneAction = true;
+                            break;
+                    }
+                    break;
+
+				
+                case "FORM":
+                    switch (aAction[1]) {
+                        case "CREATE":
+							formCreate(/*formIdx*/0, 1/*4385*/, {}/*oAction.params.formParams*/);
+                            doneAction = true;
+                            break;
+                    }
+                    break;
+
+					
+					
+                case "GRID":
+                    switch (aAction[1]) {
+                        case "CREATE":
+                            /*window.history.pushState(
+                                { page: 'messages' },
+                                'Messages',
+                                '/index.html'
+                            );*/
+                            
+                            var actionParams = aAction[3].split(",");
+                            var gridIdx = 0; // todo ustalić gridIdx
+                            gridDataRetrieve(gridIdx, aAction[2], actionParams, formIdx, function(data, formIdx, arg1) {
+                                gridCreate(data, formIdx, arg1, function(formIdx, gridIdx, mydata) {
+                                    gridDataLoad(formIdx, gridIdx, mydata);
+                                });
+							});
+                            doneAction = true;
+                            break;							
+                    }
+                    break;
+
+                case "TEXT":
+                    switch (aAction[1]) {
+                        case "CREATE":
+                            //var actionParams = aAction[3].split(",");
+                            createText(aAction[2], /*actionParams*/"", formIdx);
+                            doneAction = true;
+                            break;
+                    }
+                    break;
+
+
+            }
+
+            if (!doneAction) {
+                alert("Action not found: " + arg);
+            }
+
+        }
+
+		// arg: top, center, down
+		function configureInnerLayout(arg, formIdx)
+		{
+
+		// dodanie powoduje że nie pojawiają się formularze json
+		//			jQuery("#actiondiv" + formIdx).empty();
+//			jQuery("#actiondiv" + formIdx).empty();
+
+
+//alert("removeLayout?");
+			removeLayout("centerdiv" + formIdx, formIdx, "inner");
+//$("#centerdiv").empty();
+	
+			var subDiv;
+
+			session.forms[formIdx].divCenter.empty();
+			var subDivNorth = $("<div>").attr("id", "actiondiv" + formIdx).addClass("ui-layout-north");
+			
+			var subDivCenter = $("<div>").attr("id", "grid" + formIdx).addClass("ui-layout-center");
+			subDiv = $("<div>").attr("id", "editor" + formIdx).css({ "display": "none", "position": "absolute", "top": "0", "right": "0", "bottom": "0", "left": "0"  });	//
+			subDivCenter.append(subDiv);					
+			
+			if (session.design) {
+				subDivCenter.append(editLinkCreate("main", formIdx));						
+			}	
+			
+			subDiv = $("<div>").attr("id", "grid_container" + formIdx);
+			subDiv.append($("<table>").attr("id", "jqGrid" + formIdx));
+			subDiv.append($("<form>").attr("id", "fff" + formIdx));
+			subDiv.append($("<div>").attr("id", "res" + formIdx)); //.addClass("ui-layout-center")
+			subDivCenter.append(subDiv);
+			
+			var subDivSouth = $("<div>").attr("id", "previewdiv" + formIdx).addClass("ui-layout-south");			
+			if (session.design) {
+				subDivSouth.append(editLinkCreate("preview", formIdx));
+			}
+
+			session.forms[formIdx].divCenter.append(subDivNorth);
+			session.forms[formIdx].divCenter.append(subDivCenter);
+			session.forms[formIdx].divCenter.append(subDivSouth);	
+
+			var thisLayoutConfig = { 
+				name: 'innerLayout' + formIdx // for debugging & auto-adding buttons (see below)			
+				, north__closable: false
+				, north__size: 40
+				, north__spacing_open: 3
+
+				, south__closable: false
+				, south__size: .33
+				, south__spacing_open: 3
+
+				, center: {
+					/*http://stackoverflow.com/questions/24444337/resize-jqgrid-when-splitter-of-jquery-layout-is-dragged*/
+					resizable: true, 
+					triggerEventsOnLoad: true,
+					
+					/*onresize: function (pane, $Pane) {
+						console.log($Pane.innerWidth() + " " + $Pane.innerHeight());
+						getOrSetGridWidthAndHeight($Pane.innerWidth(), $Pane.innerHeight(), true, formIdx);
+					}*/
+					onresize: function (pane, $Pane, paneState) {
+						// 20 20 ok
+						// todo selektor powinien być wg gridIdx a nie formIdx ponieważ może być kilka gridów na jednej formatce
+						jQuery("#jqGrid" + formIdx).jqGrid('setGridHeight',paneState.innerHeight - session.gGridHeightDiff/*- 20*/, 'true');						                
+						jQuery("#jqGrid" + formIdx).jqGrid('setGridWidth',paneState.innerWidth - session.gGridWidthDiff, 'true'); //18ok 15nieok
+					}
+				}
+				
+				/*
+			,	west__paneSelector: 	'.col2'
+			,	center__paneSelector: 	'.col3'
+			,	east__paneSelector: 	'.col4'
+			,	west__size: 			'33%'	// percentage size expresses as a string
+			,	east__size: 			'33%'
+			,	autoResize:				true	// try to maintain pane-percentages
+			,	closable:				true
+			,	togglerLength_open:		0	// hide toggler-buttons
+			,	spacing_closed:			0	// hide resizer/slider bar when closed
+			,	autoReopen:				true	// auto-open panes that were previously auto-closed due to 'no room'
+			,	autoBindCustomButtons:	true
+			,	minSize:				75
+			,	center__minWidth:		75*/
+			}
+			
+			
+			//
+			session.forms[formIdx].innerLayout = session.forms[formIdx].outerLayout.panes.center.layout(/*dialogLayout_settings*/thisLayoutConfig); 
+			
+			
+			
+			
+			if (session.forms[formIdx]) {
+				/*outerLayout.close("north");
+				outerLayout.close("west");
+				outerLayout.close("south");
+				outerLayout.close("center");*/
+				
+				/*outerLayout.sizePane("north", 10);
+				outerLayout.sizePane("west", 10);
+				outerLayout.sizePane("south", 10);
+				outerLayout.sizePane("center", 10);*/
+				
+				
+/*				jQuery(".ui-layout-north").hide();
+				jQuery(".ui-layout-center").hide(); // było hide() i poniższe też
+				jQuery(".ui-layout-south").hide();
+				jQuery(".ui-layout-west").hide();*/
+				//outerLayout.hide();
+				//innerLayout.hide();
+
+/*				innerLayout.hide("north");
+				innerLayout.hide("south");
+				innerLayout.hide("center");				
+							
+				outerLayout.hide("center");
+				outerLayout.hide("north");
+				outerLayout.hide("west");
+				outerLayout.hide("south");
+
+				
+				jQuery("#menu-bar").hide();
+	*/			
+				
+				//jQuery(".ui-layout-south").hide();
+		
+//            jQuery(".ui-layout-north").show();
+
+			
+
+			//	innerLayout.hide("north");
+			
+				if (arg.codeeditor) {
+					jQuery("#editor" + formIdx).show();				
+					jQuery("#grid" + formIdx).show();
+					jQuery("#grid_container" + formIdx).hide();
+					jQuery("#jqGrid" + formIdx).hide();
+					jQuery("#res" + formIdx).hide();
+					jQuery("#fff" + formIdx).hide();
+				} else {
+					if (session.editor) {
+						jQuery("#editor" + formIdx).hide();				
+						session.editor.destroy();
+						//$editor = $('ACE_ID');
+						//$editor.remove();
+						session.editor = undefined;
+					}
+				}
+
+/*				if (arg.south===true) {
+					session.forms[formIdx].innerLayout.show("south");				
+				} else {
+					session.forms[formIdx].innerLayout.hide("south");				
+				}*/
+			
+				if (arg.grid===true) {								
+					jQuery("#grid" + formIdx).show();
+					jQuery("#grid_container" + formIdx).show();
+					jQuery("#jqGrid" + formIdx).show();
+				} else {
+		//			jQuery("#grid").hide();
+					//jQuery("#grid_container").hide();
+					//jQuery("#jqGrid").hide();					
+					
+					if ($('#jqGrid' + formIdx)) {
+						$('#jqGrid' + formIdx).jqGrid('GridUnload'); // utworzenie na nowo grid-a
+						//$('#jqGrid').clearGridData();   // jeżeli tylko dane chcemy wypełnić
+					}
+				}				
+			}			
+			
+			
+			
+		}
+		
+		function jsonForm(objectId, result, formIdx, gridIdx)
+		{
+			var resultObj = JSON.parse(result);
+			var jsonFormObj = {};
+
+			switch (resultObj.type) {
+				case "chat":
+					var recipient = session.forms[formIdx].formParams.gridId;										
+					
+					var chatIdx, newChatIdx = 1;
+					while (session.chats[String(newChatIdx)]) {
+						newChatIdx++;
+					}
+					chatIdx = newChatIdx;
+				
+					session.chats[chatIdx] = {
+						"recipient": recipient
+					};			
+					
+					//session.chat = new Chat(formIdx);								
+					configureInnerLayout({"north": true, "center": true, "south": true, "grid": true}, formIdx);
+					startChat(formIdx, chatIdx);
+					break;
+					
+				case "edit":
+                
+                    var oAction = {};
+                    oAction.params = {};
+                    oAction.method = "msgRead";
+                    oAction.params.type = session.forms[formIdx].formParams.type; //"note";
+                    //oAction.params.id = session.forms[formIdx].formParams.gridId;
+                    if (session.forms[formIdx].formParams.entity=="update") {
+                        oAction.params[session.forms[formIdx].formParams.gridIdName] = session.forms[formIdx].formParams.gridId;
+                    } else {
+                        oAction.params.o = "<pomin>";
+                    }
+
+                    backend(oAction.method, oAction.params).then(
+                        function (result) {
+                            var contentsOrginal;
+                            if (session.forms[formIdx].formParams.entity=="update") {
+                                var contentsOrginal = result.data[0].message;
+                            }
+                            //alert(JS(contentsOrginal));
+
+                            configureInnerLayout({"north": true, "center": true, "south": true, "grid": true}, formIdx);
+                            /*$("#bodydiv").append($("<div id=\"dialog\" title=\"TinyMCE dialog\" style=\"display: none\"><textarea>qqq</textarea></div>"));							
+                            $("#dialog").dialog({
+                                width: 800,
+                                modal: true
+                            });*/
+                            tinymce.init({ 
+                                selector: "#res" + formIdx,
+                                height: "100%",//200,
+                                menubar: false,
+                                statusbar: false,
+                                browser_spellcheck: true,
+                                    
+                                paste_as_text: true,
+                                plugins: ['paste link textcolor code'],
+                                force_br_newlines: true,
+                                paste_remove_spans: true,
+                                toolbar: "undo redo | bold italic underline forecolor | link unlink | code | sizeselect | fontsizeselect",
+                                toolbar_items_size : 'small',
+                                fontsize_formats: "8pt 10pt 12pt 14pt 18pt 24pt 36pt",
+                                setup: function (ed) {
+                                    ed.on('init', function(args) {
+                                        //console.debug(args.target.id);
+                                        //$(args.target.id).tinymce().focus();
+                                        //args.focus();
+                                        
+                                        
+                                        //var editContent = tinyMCE.get(tinymce_id).getContent();
+                                        //tinymce.setContent("ala ma kotaka i piesaka");                                        
+                                        if (session.forms[formIdx].formParams.entity=="update") {
+                                            tinyMCE.get("res" + formIdx).setContent(contentsOrginal);
+                                        }
+                                        
+                                        tinymce.execCommand("mceFocus", false, "res" + formIdx);
+                                    });
+                                }
+                                /*
+                                plugins: ['advlist autolink lists link image charmap print preview anchor','searchreplace visualblocks code fullscreen','insertdatetime media table contextmenu paste code'],
+                                toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',  
+                                content_css: ['//fast.fonts.net/cssapi/e6dc9b99-64fe-4292-ad98-6974f93cd2a2.css','//www.tinymce.com/css/codepen.min.css']*/
+                            });								
+                            //tinymce.execCommand('mceFocus',false, "res" + formIdx);
+                            //tinymce.get("res" + formIdx).focus(); // ok                            
+                            
+                            
+                        },
+                        function (err) {
+                            errMsg("error: (105k)", err);
+                        }									
+                    );				
+
+					break;
+					
+				default:
+					configureInnerLayout({"north": true, "center": true, "south": false, "grid": false}, formIdx);
+					jsonFormObj.schema = resultObj.schema;
+					jsonFormObj.form = resultObj.form;
+					
+					/*session.forms[formIdx].formUpdateAndClose = jsonFormObj.submitEvent;							
+					$( "#foo" ).bind( "submit", function() {
+					  alert( message );
+					});*/
+					
+					jsonFormObj.onSubmit = function (errors, values) {
+					  if (errors) {
+						$('#res' + formIdx).html('<p>Popraw formularz</p> ' + errors);
+					  } else {				
+						$('#res' + formIdx).html("<pre>" + JSON.stringify(values, null, "\t") + "</pre>");
+	//alert(gridIdx);
+						//alert(session.forms[formIdx].jsonForm.gridIdx);					
+						jsonFormUpdate(formIdx, gridIdx, values);
+	//					session.forms[formIdx].formUpdateAndClose
+					  }
+					};
+						
+					//$('form').jsonForm(jsonFormObj);
+					session.forms[formIdx].jsonForm = $('#fff' + formIdx).jsonForm(jsonFormObj);
+					break;
+			}
+		}
+		
+		
+		
+
+		// utworzenie elementów layout
+		function createLayoutElements(where, formIdx)
+		{
+			where = "#" + where;
+			/*$("#menudiv1").remove();
+			$("#centerdiv1").remove();
+			$("#treediv1").remove();
+
+			$("#menudiv" + formIdx).remove();
+			$("#centerdiv" + formIdx).remove();
+			$("#treediv" + formIdx).remove();
+			
+			
+				jQuery(".ui-layout-north").remove();
+				jQuery(".ui-layout-center").remove(); // było hide() i poniższe też
+				jQuery(".ui-layout-south").remove();
+				jQuery(".ui-layout-west").remove();
+				jQuery(".ui-layout-east").remove();*/
+			
+			var subDiv;
+
+	//"<a href=\"/w/index.php?title=Wikipedia:Kawiarenka/Kwestie_techniczne&amp;action=edit\" title="Edytuj">Edytuj</a>
+/*			var a = $("<a>").attr("href", "/w/index.php?title=Wikipedia:Kawiarenka/Kwestie_techniczne&amp;action=edit").attr("title", "Edytuj");
+			a.text("Edytuj");
+			
+			var edytuj = $("<div>").append(a);
+			edytuj.attr("style", "float: right; visibility: visible; margin-left: auto; margin-right: 100; margin-end: 100 "); */
+			//right; margin-right: 20;
+			//width: auto; z-index: 0; height: 40px; 
+			//position: absolute; margin: 0px; top: 0px; bottom: auto; left: 0px; right: 0px; 
+			//edytuj.css({  });
+			//display: block; position: absolute; margin: 0px; top: 0px; bottom: auto; left: 0px; right: 0px; width: auto; z-index: 0; height: 40px; visibility: visible;
+			//divWest.append(edytuj);
+				
+			
+			session.forms[formIdx].divNorth = $("<div>").attr("id", "menudiv" + formIdx).addClass("ui-layout-north").css("display", "none");
+			
+			subDiv = $("<div>").attr("id", "title" + formIdx)/*.attr("style", "display: none")*/.css({"float": "left", "margin": "10px 10px 10px 10px"}); //
+			subDiv.html("<b><font style=\"color: blue;\"> Portal uniwersalny</font></b> wersja beta");
+			
+			session.forms[formIdx].divNorth.append(subDiv);
+			
+			subDiv = $("<div>").attr("id", "menu-bar" + formIdx).attr("style", "display: none").css({"float": "right"}); //.css({"z-index": "50 !important", "overflow": "visible !important"});		
+			var ul = $("<ul>").attr("id", "mainmenu" + formIdx).addClass("main-menu");
+			subDiv.append(ul);
+			session.forms[formIdx].divNorth.append(subDiv);
+			
+
+			if (session.design) {
+				//session.forms[formIdx].divNorth.prepend(editLinkCreate("menu", formIdx));
+				session.forms[formIdx].divNorth.append(editLinkCreate("menu", formIdx));
+			}			
+			
+//			session.forms[formIdx].divNorth.append(userLinkCreate(formIdx));
+			
+	/*		
+			
+			  <!--<div id="mainpanel" style="display: none;">	-		-->
+    <div class="ui-layout-center" style="display: none;">
+
+        <div id="actiondiv" class="ui-layout-north">            
+            <!--&nbsp;<input type="text" name="kodreskowy" id="kodkreskowy" />
+            <button onclick="action(1234);" id="kodkreskowyBtn">Znajdź</button>-->
+        </div>
+        
+
+		<div id="grid" class="ui-layout-center">
+			<div id="editor" style="display: none;"></div>
+            <!--<div id="jqGridPager"></div>-->
+            <div id="grid_container">
+                <table id="jqGrid"></table>
+                <!-- <div id="grid_pgr"></div>-->				
+				<form id="fff"></form>
+				<div id="res" class="alert"></div>				
+            </div>
+        </div>
+        <div class="ui-layout-south"><!--Podgląd panel--></div>
+    </div>*/
+	
+			session.forms[formIdx].divCenter = $("<div>").attr("id", "centerdiv" + formIdx).addClass("ui-layout-center").css("display", "none");
+			
+//////////////////			
+
+/////////////////////			
+	
+			
+			//<div class="ui-layout-south" style="display: none;"><div id="south-container"></div><!--Status panel--></div>
+			session.forms[formIdx].divSouth = $("<div>").attr("id", "statusdiv" + formIdx).addClass("ui-layout-south").css("display", "none");; //.css("display", "none");
+			subDiv = $("<div>").attr("id", "south-container" + formIdx);
+			session.forms[formIdx].divSouth.append(subDiv);
+	
+			//<div class="ui-layout-east"><div id="east-container"></div></div>
+			session.forms[formIdx].divEast = $("<div>").attr("id", "usersdiv" + formIdx).addClass("ui-layout-east").css("display", "none");
+			subDiv = $("<div>").attr("id", "east-container");
+			session.forms[formIdx].divEast.append(subDiv);
+	
+			if (session.design) {
+				session.forms[formIdx].divEast.append(editLinkCreate("form", formIdx));
+				session.forms[formIdx].divEast.append(editLinkCreate("dbstruct", formIdx));
+				session.forms[formIdx].divEast.append(editLinkCreate("formnew", formIdx));
+			}		
+	
+
+			//<div class="ui-layout-west" style="display: none;">	<div id="tree"><ul></ul></div></div>
+			session.forms[formIdx].divWest = $("<div>").attr("id", "treediv" + formIdx).addClass("ui-layout-west").css("display", "none");
+			subDiv = $("<div>").attr("id", "tree" + formIdx);
+			var ul = $("<ul>");//.addClass("main-menu");
+			subDiv.append(ul);
+			
+			session.forms[formIdx].divWest.append(subDiv);
+
+			if (session.design) {
+				session.forms[formIdx].divWest.append(editLinkCreate("tree", formIdx));			
+			}
+			
+			
+			// you haven't touched the DOM yet, everything thus far has been in memory			
+			$(where).append(session.forms[formIdx].divNorth);
+			$(where).append(session.forms[formIdx].divCenter);			
+			$(where).append(session.forms[formIdx].divSouth);
+			$(where).append(session.forms[formIdx].divEast);
+			$(where).append(session.forms[formIdx].divWest);
+		}
+        
+
+		function jsonFormUpdate(formIdx, gridIdx, values)
+		{
+			var method, condition;
+			switch (session.forms[formIdx].formParams.mode) {
+				case "create": method = "entityCreate"; break;
+				case "update": 
+					method = "entityUpdate";
+					if (session.forms[formIdx].formParams.gridSelectMultiple) {
+						alert("Brak obsługi zaznaczania wielu pozycji.");
+						return;
+					} else {
+						//"\"" + String(session.forms[formIdx].formParams.gridIdName) + "\":"
+						condition = {};
+						condition[String(session.forms[formIdx].formParams.gridIdName)] = session.forms[formIdx].formParams.gridId;
+					}
+					break;
+				default:
+					status(1, "Błąd #1123774 " + session.forms[formIdx].formParams.mode);
+					return;
+			}
+			backend(method, { "entity": session.grids[gridIdx].object.entity, "values": values, "condition": condition }).then(
+				function (result) {
+					alert("ok");
+				},
+				function (err) {
+					status(1, "Błąd #879432 " + JSON.stringify(err));
+				}				
+			);		
+		}		
+		
+		function editLinkCreate(what, formIdx)
+		{
+			var a = $("<a>").attr("id", "edit_" + what + "_" + formIdx).attr("href", "#").attr("title", "Edytuj"); ///w/index.php?title=Wikipedia:Kawiarenka/Kwestie_techniczne&amp;action=edit
+			a.text("Edytuj");
+			//a.attr("click", "function(e) { e.preventDefault(); alert('aa'); }");			
+			//var js = "alert(this.id); return false;";
+			//var newclick = new Function(js);
+			// clears onclick then sets click using jQuery
+			//a.click(newclick);	//attr('onclick', '').	
+			a.click(function(e) {
+				e.preventDefault(); 
+				var aId = this.id.split("_");
+				var thisWhat = aId[1];
+				var thisFormIdx = aId[2];
+				var objectId;
+				switch (thisWhat) {					
+					case "form": objectId = session.forms[thisFormIdx].layout.form; break;
+					case "menu": objectId = session.forms[thisFormIdx].layout.menu; break;
+					case "tree": objectId = session.forms[thisFormIdx].layout.tree; break;
+					case "main": objectId = session.forms[thisFormIdx].layout.main; break;
+					//case "preview": break;
+					case "dbstruct": objectId = 4000; break;
+					default: 
+						status(formIdx, "Brak obsługi elementu: " + thisWhat);
+						return;
+				} 
+				codeEditor(objectId, thisFormIdx, thisWhat);
+				
+				return false; 
+			});			
+			
+//	a.attr('click',function(e){
+//        /*var contentId = "summary_" + $(this).attr('id');
+//        $(".summary").hide();
+//        $("#" + contentId).show();*/
+//		alert('qqq');
+//    });					
+	
+			var edytuj = $("<div>");
+			switch (what) {
+				// wszystkie miały: float: end; 
+				case "form": edytuj.attr("style", "visibility: visible;"); a.html("Edytuj formularz"); break; //visibility: visible; margin-left: auto; margin-right: 100; margin-end: 3 
+				case "menu": 
+					//edytuj.attr("style", "float: end; visibility: visible; margin-left: auto; margin-right: 100; margin-end: 3 "); 
+					edytuj.attr("style", "float: center; ");  //visibility: visible; margin-left: auto; margin-right: 100; margin-end: 3 
+					//edytuj.css({"float": "right"});
+					a.text("Edytuj menu"); 
+					break;
+				case "tree": edytuj.attr("style", "visibility: visible;"); a.text("Edytuj drzewko"); break; //margin-left: 3; margin-right: 3; margin-end: 3 
+				case "main": edytuj.attr("style", "visibility: visible; "); a.text("Edytuj main"); break;//margin-left: 3; margin-right: 3; margin-end: 3 
+				case "preview": edytuj.attr("style", "visibility: visible; "); a.text("Edytuj podgląd"); break;//margin-left: 3; margin-right: 3; margin-end: 3 
+				case "dbstruct": edytuj.attr("style", "visibility: visible;"); a.html("Edytuj strukturę bazy danych"); break;// margin-left: auto; margin-right: 100; margin-end: 3 
+				
+				case "formnew": edytuj.attr("style", "visibility: visible;"); a.html("Nowy formularz"); break;// margin-left: auto; margin-right: 100; margin-end: 3 
+				
+				default:
+					status(formIdx, "Brak określenia elementu edycji: " + what);
+			}
+			
+			edytuj.append(a);
+			return edytuj;
+		}
+		
+		function userLinkCreate(formIdx)
+		{
+			var a = $("<a>").attr("id", "user_" + formIdx).attr("href", "#");//.attr("title", "User");
+			a.click(function(e) {
+				e.preventDefault(); 
+				var aId = this.id.split("_");
+				var thisWhat = aId[1];
+				var thisFormIdx = aId[2];
+				var objectId;
+				alert(JSON.stringify(session.sessionObj));
+				return false; 
+			});									
+			var edytuj = $("<div>");
+			edytuj.attr("style", "float: right; ");  //visibility: visible; margin-left: auto; margin-right: 100; margin-end: 3 
+			//a.text("użytkownik:");
+			edytuj.append(a);
+			return edytuj;
+		}
+		
+        //subDiv.html("<b><font style=\"color: red;\"> Portal uniwersalny</font></b> wersja beta");
+        
+		function status(formIdx, text, color)
+		{
+            text = text.replace(/run\s/, "");
+			var time = (session.design===true || color===true) ? 10000 : 1000;
+			var idRandom = "id" + String(Math.floor((Math.random() * 10000) + 1));
+			var p;
+            if (color) {
+                p = $("<span>").attr("id", idRandom).html(text + "&nbsp;").css({"color": "red"});
+            } else {
+                p = $("<span>").attr("id", idRandom).html(text + "&nbsp;");
+            }
+            
+			$("#south-container" + formIdx).append(p);
+			setTimeout(function(){
+				$("#" + idRandom).remove();
+			}, time);
+		}
+
+		// returns: 
+		//		false - nie zaznaczono rekordu(ów) lub błąd
+		//		["X1", "X2"] - tablica zaznaczonych elementów
+		function getCurrentIds(grid, field, multiple)
+		{
+			var gridRow = jQuery(grid).jqGrid('getGridParam','selrow'); 	
+			if (gridRow) {             
+				var gridRowData = jQuery(grid).jqGrid('getRowData',gridRow); 
+				if (!gridRowData[field]) {
+					alert("Pole " + field + " nie zostało odnalezione w elemencie grid\n" + JSON.stringify(gridRowData) );
+					return false;
+				}
+				return gridRowData[field];
+			} else {
+				alert("Zaznacz wybraną pozycję.");
+				return false;
+			} 
+
+if (false) {		
+			var aIdsSelected = [];
+			/*
+			var selected=jQuery(grid).getGridParam('selarrrow');
+			if (selected.length<=0) {
+				alert("Zaznacz wybrane pozycje.");			
+				return undefined;
+			}
+			for (var i=0;i<selected.length;i++)	{
+				var rowData = $(grid).getRowData(selected[i]);
+				//zmienne[i+1]=rowData.id;
+				aIdsSelected.push(rowData.id);			
+			}*/
+			var gridId = grid.replace(/\#/, "");
+			for (var selectedId in gGrids[gridId].gSelectedIds) {
+				if (gGrids[gridId].gSelectedIds[selectedId]) {	
+					aIdsSelected.push(gGrids[gridId].gSelectedIds[selectedId].id);
+				}	
+			}
+			
+			if (aIdsSelected.length<=0) {
+				alert("Zaznacz wybrane pozycje.");			
+				return undefined;
+			}
+			
+			return aIdsSelected;
+}
+		}
+		
+		// class Chat
+		function Chat(formIdx)
+		{				
+			
+			//startChatMain(formIdx);
+			
+	// Sets the client's user
+			
+		  
+		  // Prompt for setting a user
+		  this.user = "";
+		  this.connected = false;
+		  this.typing = false;
+		  this.lastTypingTime = "";
+			
+	  
+		
+		  this.FADE_TIME = 150; // ms
+		  this.TYPING_TIMER_LENGTH = 400; // ms
+		  this.COLORS = [
+			'#e21400', '#91580f', '#f8a700', '#f78b00',
+			'#58dc00', '#287b00', '#a8f07a', '#4ae8c4',
+			'#3b88eb', '#3824aa', '#a700ff', '#d300e7'
+		  ];
+					
+		  var that = this;
+		  
+		  that.$window = $(window);
+
+/*		  
+		  this.addParticipantsMessage = function  (data) {
+			var message = '';
+			if (data.numUsers === 1) {
+			  message += "jest 1 użytkownik";
+			} else {
+			  message += "jest " + data.numUsers + " użytkowników";
+			}
+			that.log(message);
+		  }
+*/
+			
+			this.setUser = function  () {
+				that.user = that.cleanInput(session.sessionObj.user); //$userInput.val().trim()
+				// If the user is valid
+				if (that.user) {
+					//$loginPage.fadeOut();
+					//$chatPage.show();
+
+					//$loginPage.off('click');
+					//			  $currentInput = $inputMessage.focus();
+
+					// Tell the server your user
+					  var oMessage = {
+						user: that.user,
+						recipient: that.recipient,
+						sysauth: session.sessionId
+					  }
+					  // tell server to execute 'new message' and send along one parameter					
+					
+					session.socket.emit('add user', oMessage);
+				}
+			}
+			
+		  // Sends a chat message
+		  this.sendMessage = function() {
+			var message = that.$inputMessage.val();
+			// Prevent markup from being injected into the message
+			message = that.cleanInput(message);
+			// if there is a non-empty message and a socket connection
+			if (message && that.connected) {
+			  that.$inputMessage.val('');
+			  /*that.addChatMessage({
+				user: that.user,
+				message: message,
+				recipient: that.recipient
+			  });*/
+			  var oMessage = {
+				user: that.user,
+				message: message,
+				recipient: that.recipient
+			  }
+			  // tell server to execute 'new message' and send along one parameter
+			  oMessage.sysauth = session.sessionId;
+			  session.socket.emit('new message', oMessage);
+			}
+		  }
+
+		  // Log a message
+		  this.log = function(message, options) {
+			var $el = $('<li>').addClass('log').text(message);
+			that.addMessageElement($el, options);
+		  }
+
+		  // Adds the visual chat message to the message list
+		  this.addChatMessage = function(data, options) {
+			// Don't fade the message in if there is an 'X was typing'
+			var $typingMessages = that.getTypingMessages(data);
+			options = options || {};
+			if ($typingMessages.length !== 0) {
+			  options.fade = false;
+			  $typingMessages.remove();
+			}
+
+			var $userDiv = $('<span class="user"/>').text(data.user + " ").css('color', that.getUserColor(data.user));
+			
+			var $messageBodyDiv = $('<span class="messageBody">').text(data.message + " ");
+			  
+			//var timeLocal = new Date(data.time).toString();
+			var timeLocal = moment(data.time).fromNow(); //format("YY-MM-DD, h:mm:ss a"); 
+			var $timeDiv = $('<span class="messageTime">').text(timeLocal + " ");
+			  
+			var typingClass = data.typing ? 'typing' : '';
+			var $messageDiv = $('<li class="message"/>').data('user', data.user).addClass(typingClass).append($userDiv, $timeDiv, $messageBodyDiv);
+
+			that.addMessageElement($messageDiv, options);
+		  }
+
+		  // Adds the visual chat typing message
+		  /*this.addChatTyping = function(data) {
+			data.typing = true;
+			data.message = 'pisze';
+			that.addChatMessage(data);
+		  }*/
+
+		  // Removes the visual chat typing message
+		  /*this.removeChatTyping = function(data) {
+			that.getTypingMessages(data).fadeOut(function () {
+			  $(this).remove();
+			});
+		  }*/
+
+		  // Adds a message element to the messages and scrolls to the bottom
+		  // el - The element to add as a message
+		  // options.fade - If the element should fade-in (default = true)
+		  // options.prepend - If the element should prepend
+		  //   all other messages (default = false)
+		  this.addMessageElement = function(el, options) {
+			var $el = $(el);
+
+			// Setup default options
+			if (!options) {
+			  options = {};
+			}
+			if (typeof options.fade === 'undefined') {
+			  options.fade = true;
+			}
+			if (typeof options.prepend === 'undefined') {
+			  options.prepend = false;
+			}
+
+			// Apply options
+			if (options.fade) {
+			  $el.hide().fadeIn(that.FADE_TIME);
+			}
+			if (options.prepend) {
+			  that.$messages.prepend($el);
+			} else {
+			  that.$messages.append($el);
+			}
+			
+			//that.$messages[0].scrollTop = that.$messages[0].scrollHeight;
+			$("#grid2")[0].scrollTop = $("#grid2")[0].scrollHeight;
+		  }
+
+		  // Prevents input from having injected markup
+		  this.cleanInput = function(input) {
+			return $('<div/>').text(input).text();
+		  }
+
+		  // Updates the typing event
+		  this.updateTyping = function() {
+			if (that.connected) {
+			  if (!that.typing) {
+				that.typing = true;
+				session.socket.emit('typing');
+			  }
+			  that.lastTypingTime = (new Date()).getTime();
+
+			  setTimeout(function () {
+				var typingTimer = (new Date()).getTime();
+				var timeDiff = typingTimer - that.lastTypingTime;
+				if (timeDiff >= that.TYPING_TIMER_LENGTH && that.typing) {
+				  session.socket.emit('stop typing');
+				  that.typing = false;
+				}
+			  }, that.TYPING_TIMER_LENGTH);
+			}
+		  }
+
+		  // Gets the 'X is typing' messages of a user
+		  this.getTypingMessages = function(data) {
+			return $('.typing.message').filter(function (i) {
+			  return $(this).data('user') === data.user;
+			});
+		  }
+
+		  // Gets the color of a user through our hash function
+		  this.getUserColor = function(user) {
+			// Compute hash code
+			var hash = 7;
+			for (var i = 0; i < user.length; i++) {
+			   hash = user.charCodeAt(i) + (hash << 5) - hash;
+			}
+			// Calculate color
+			var index = Math.abs(hash % that.COLORS.length);
+			return that.COLORS[index];
+		  }
+
+		  // Keyboard events
+
+
+
+		  // Socket events
+
+		  // Whenever the server emits 'login', log the login message
+		  session.socket.on('login', function (data) {
+			that.connected = true;
+			// Display the welcome message
+			/*var message = ""; //"Dzień dobry";
+			log(message, {
+			  prepend: true
+			});*/
+//			that.addParticipantsMessage(data);
+			session.msg = data.msg;
+			usersListRefresh("login", data);
+		  });
+
+		  // Whenever the server emits 'new message', update the chat body
+		  session.socket.on('new message', function (data) {
+			that.addChatMessage(data);
+			session.msg.push(data);
+
+			//http://soundjax.com/ding-7.html
+			//https://github.com/meganz/ion.sound
+			var audio = new Audio('ding.mp3');
+			audio.play();
+			
+			session.msg = session.msg.sort(function(a, b) {
+				//return parseFloat(a.time) - parseFloat(b.time);
+				return a.time.localeCompare(b.time)
+			});
+			
+		  });
+		  // Whenever the server emits 'user joined', log it in the chat body
+		  session.socket.on('user joined', function (data) {
+			/*that.log(data.user + ' joined');
+			that.addParticipantsMessage(data);*/
+			usersListRefresh("userjoined", data);
+		  });
+
+		  // Whenever the server emits 'user left', log it in the chat body
+		  session.socket.on('user left', function (data) {
+			/*that.log(data.user + ' left');
+			that.addParticipantsMessage(data);*/
+			usersListRefresh("userleft", data);
+			usersListRefresh("typingstop", data);
+			//that.removeChatTyping(data);
+		  });
+
+		  // Whenever the server emits 'typing', show the typing message
+		  session.socket.on('typing', function (data) {
+			//that.addChatTyping(data);
+			data.typing = true;
+			data.message = 'pisze';
+			//that.addChatMessage(data);
+			usersListRefresh("typing", data);
+		  });
+
+		  // Whenever the server emits 'stop typing', kill the typing message
+		  session.socket.on('stop typing', function (data) {
+			//that.removeChatTyping(data);
+			usersListRefresh("typingstop", data);
+		  });
+		  
+		  that.setUser();						
+		  
+		  return this;
+		}
+		
+		
+		
+		
+		function startChat(formIdx, chatIdx)
+		{
+		
+			$("#res" + formIdx).empty();			
+			$("#previewdiv" + formIdx).empty();			
+			
+	  		var divChatArea = $("<div>").attr("id", "chatarea" + formIdx).addClass("chatArea"/* + formIdx*/);
+			var ulMessages = $("<ul>").attr("id", "messages" + formIdx).addClass("messages"/* + formIdx*/);
+			divChatArea.append(ulMessages);
+			session.chat.inputMessage = $("<input>").attr("id", "inputMessage" + formIdx).addClass("inputMessage"/* + formIdx*/).attr("placeholder", "Wiadomość...");
+			
+			$("#res" + formIdx).append(divChatArea);
+			//$("#res" + formIdx).append(inputMessage); 	  
+			$("#previewdiv" + formIdx).append(session.chat.inputMessage); 	  
+
+		  // Initialize variables
+//		  var $userInput = $(".userInput"); // Input for user
+		  session.chat.$messages = $("#messages" + formIdx); //.messages// 	Messages area //".messages"
+		  session.chat.$inputMessage = $("#inputMessage" + formIdx); // Input message input box
+
+		  //var $loginPage = $('.login.page'); // The login page
+		  //var $chatPage = $('.chat.page'); // The chatroom page
+
+		  //var $currentInput = $userInput.focus();
+		  session.chat.$currentInput = session.chat.$inputMessage.focus();
+
+		  
+			//odbiorca(y) wiadomości, "all" "allfriends": wszyscy znajomi, ["user1", "user2"] - określeni użytkownicy
+			//var recipient;			
+			if (session.forms[formIdx].formParams.gridId) {
+				session.chat.recipient = [];
+				session.chat.recipient.push(session.forms[formIdx].formParams.gridId);	
+			} else {
+				session.chat.recipient = "all";
+			}			
+			
+
+		  	//session.chat.setUser();			
+
+
+			for (var msg in session.msg) {
+				//
+				if ((session.msg[msg].user==session.sessionObj.user && $.inArray(session.chats[chatIdx].recipient, session.msg[msg].recipient)>=0) ||
+					($.inArray(session.sessionObj.user, session.msg[msg].recipient)>=0 && session.msg[msg].user==session.chats[chatIdx].recipient)) {
+					session.chat.addChatMessage(session.msg[msg]);
+				}
+			}
+			
+			
+		  session.chat.$inputMessage.on('input', function() {
+			session.chat.updateTyping();
+		  });
+
+		  // Click events
+
+		  // Focus input when clicking anywhere on login page
+		  /*$loginPage.click(function () {
+			$currentInput.focus();
+		  });*/
+
+		  // Focus input when clicking on the message input's border
+		  session.chat.$inputMessage.click(function () {
+			session.chat.$inputMessage.focus();
+		  });
+
+
+		  session.chat.$window.keydown(function (event) {
+			// Auto-focus the current input when a key is typed
+			if (!(event.ctrlKey || event.metaKey || event.altKey)) {
+			  session.chat.$currentInput.focus();
+			}
+			// When the client hits ENTER on their keyboard
+			if (event.which === 13) {
+			  if (session.chat.user) {
+				session.chat.sendMessage();
+				session.socket.emit('stop typing');
+				session.chat.typing = false;
+			  } else {
+				status(1, "Brak użytkownika dla chatu");
+				//setUser();
+			  }
+			}
+		  });
+
+		  
+		}
+		
+		function usersListRefresh(what, data)
+		{
+			switch (what) {
+				case "login": 					
+				case "userjoined":					
+					$("#" + session.grids[session.usersListGridIdx].jqGridElement).setRowData( data.user, { stan: "*" });
+					if (what=="login") {
+						status(1, "usersListRefresh"); //JS(data)
+						for (var iUser in data.users) {
+							$("#" + session.grids[session.usersListGridIdx].jqGridElement).setRowData( data.users[iUser], { stan: "*" });							
+						}
+					}
+					break;
+				
+				case "userleft":
+					$("#" + session.grids[session.usersListGridIdx].jqGridElement).setRowData( data.user, { stan: "" });
+					break;
+			}
+			
+
+			//console.log(what + " " + JS(data));
+		}
+		
+		function toolBarCreate(type, objectId, formIdx, gridIdx, jsonMenu, oParams) 
+		{
+			// dodanie przycisku zapisz			
+			jQuery("#actiondiv" + formIdx).empty();
+			
+			switch (type) {
+				case "codeEditor":
+					//html("<button onclick=\"codeEditorUpdate(" + objectId + "," + formIdx + ");\" id=\"kodkreskowyBtn\">Zapisz</button>");								
+					var button = $("<button>").on("click", function(elem, elem2) {
+                        //alert($(this).data("objectPrivate"));
+						codeEditorUpdate(objectId, formIdx, {"objectPrivate": $(this).data("objectPrivate")});
+					});
+					button.text("Zapisz");
+					
+                    var sObjectDescription;
+                    if (oParams) {
+                        button.data("objectPrivate", oParams.objectPrivate);
+                        if (oParams.objectPrivate===true) {
+                            sObjectDescription = " (p)";
+                        } else {
+                            sObjectDescription = " (g)";
+                        }
+                    }
+					var span = $("<span>").text("Obiekt: " + String(objectId) + sObjectDescription).css({"float": "right", "margin": "10px"});
+					jQuery("#actiondiv" + formIdx).append(button).append(span);
+					break;
+				case "text":					
+				case "default":
+					for (var i in jsonMenu) {					
+						var actionStr = JSON.stringify(jsonMenu[i]["action"]);
+						var button = $("<button>").on("click", function(arg, arg2, arg3) {
+							//alert(xinspect(arg)/*, JSON.stringify(arg2), JSON.stringify(arg3)*/, action);
+							 //alert($(this).val());
+							 action($(this).attr('action'), formIdx, gridIdx);
+							 //action(jsonMenu[i]["action"], formIdx);
+						});
+						button.text(jsonMenu[i]["title"]);
+						button.css({"margin": "10px 0px 10px 0px"});
+						//button.value = jsonMenu[i]["title"]
+						button.attr("action", actionStr);
+						jQuery("#actiondiv" + formIdx).append(button);
+					}
+/////////                    
+				var htmlSrc = ""; 
+				var treedata = { "id": gridIdx };
+				htmlSrc += 
+						"<nobr>" +
+						"<button id=\"firstPage\" onclick=\"firstPage(" + gridIdx + ");\"><<</button>&nbsp;" +
+						"<button id=\"prevPage\" onclick=\"prevPage(" + gridIdx + ");\"><</button>" +
+						"&nbsp;&nbsp;" +
+						"<label id=\"pagingStatus" + gridIdx + "\"></label>" +
+						"&nbsp;&nbsp;" +
+						"<button id=\"nextPage\" onclick=\"nextPage(" + gridIdx + ");\">></button>&nbsp;" +
+						"<button id=\"lastPage\" onclick=\"lastPage(" + gridIdx + ");\">>></button>" +
+						"</nobr>";
+					/*"<div id='pagingDiv" + gridIdx + "' align=\"right\">" +*/
+					/*"</div>";						*/
+                    var span = $("<span>").html(htmlSrc).css({"float": "right", "margin": "10px"});
+                    jQuery("#actiondiv" + formIdx).append(span);//$(htmlSrc)
+////////////                    
+
+					break;
+				
+				default: alert("Błędne określienie akcji #172923 " + type);
+					
+			}
+			//$("button").button();
+		}
+
+        
+
+
+        function nextPage(gridIdx)
+        {
+            session.grids[gridIdx].pagingCurrentPage++;
+
+/*            if (session.grids[gridIdx].pagingCurrentPage>session.grids[gridIdx].pagingPageCount) {
+                session.grids[gridIdx].pagingCurrentPage = session.grids[gridIdx].pagingPageCount;
+            } else {*/
+                gridRefresh(gridIdx);
+//            }
+        }
+
+
+        function prevPage(gridIdx)
+        {
+            session.grids[gridIdx].pagingCurrentPage--;
+
+            if (session.grids[gridIdx].pagingCurrentPage<=0) {
+                session.grids[gridIdx].pagingCurrentPage = 1;
+            }
+            gridRefresh(gridIdx);
+        }			
+
+
+        function firstPage(gridIdx)
+        {
+            session.grids[gridIdx].pagingCurrentPage = 1;
+            gridRefresh(gridIdx);
+        }
+
+
+        function lastPage(gridIdx)
+        {
+            session.grids[gridIdx].pagingCurrentPage = session.grids[gridIdx].pagingPageCount;
+            gridRefresh(gridIdx);
+        }
+
+        
+        
+		//http://stackoverflow.com/questions/5357442/how-to-inspect-javascript-objects
+		function xinspect(o,i)
+        {
+			if(typeof i=='undefined')i='';
+			if(i.length>5)return '[MAX ITERATIONS]';
+			var r=[];
+			for(var p in o){
+				var t=typeof o[p];
+				r.push(i+'"'+p+'" ('+t+') => '+(t=='object' ? 'object:'+xinspect(o[p],i+'  ') : o[p]+''));
+			}
+			return r.join(i+'\n');
+		}
+
+		function errMsg(txt, err)
+		{
+			alert(txt + " " + err.code + " " + err.message);
+		}
+
+        function calcHash(hashInput) {
+            try {
+                var hashInputType = "TEXT";
+                var hashVariant = "SHA-512";
+                var hashRounds = 1;
+                var hashOutputType = "HEX";
+                var hashOutput = "";
+                var hashObj = new jsSHA(
+					"SHA-512"/*hashVariant.options[hashVariant.selectedIndex].value*/,
+					"TEXT",
+					{ numRounds: 1 }
+				);
+                hashObj.update(hashInput + "pwm4898DJ1");
+                hashOutput = hashObj.getHash("HEX");
+                return hashOutput;
+            } catch (e) {
+                alert(e.message);
+            }
+        }
+		
+		function indexedDbOpen()
+		{			
+			db.open({
+				server: 'ludzi.org',
+				version: 1,
+				schema: {
+					object: {
+						key: { keyPath: 'id' , autoIncrement: true },
+						// Optionally add indexes
+						indexes: {
+							firstName: { },
+							answer: { unique: true }
+						}
+					}
+				}
+
+			}).catch(function (err) {
+				if (err.type === 'blocked') {
+					session.localServer.close();
+					return err.resume;
+				}
+				// Handle other errors here
+				alert(err);
+				throw err;
+			}).then(function (s) {
+				session.localServer = s;
+				// One can add a versionchange handler here to self-close
+				//   the connection upon future upgrade attempts (likely to
+				//   be one made in other tabs) and thereby
+				//   avoid such attempts having to face blocking errors.
+			});
+		}
+
+		
+    </script>
+</head>
+<body id="bodydiv">
+   
+<script id="loginTmpl" type="text/template">   
+    <!--<form accept-charset="UTF-8" rem_action="?login=1" method="post"> --><!--/session-->
+    <div id="loginpanel" class="auth-wrapper" style="display: none;">
+        <div style="margin:0;padding:0;display:inline">
+            <input name="utf8" type="hidden" value="?" />
+            <input name="authenticity_token" type="hidden" value="TRYnkqpM2mAd/gKL9K9RES1Vz3Wp5Y8VeF7fe6WlEMFiqll12ECJiysHYbrZ+FXsTljRdtEhh+Hxw3gpFVIQDw==" />
+        </div>
+
+        <div class="auth-form-header">
+            <h1>Portal <font color="blue">ludzi</font></h1>
+        </div>
+		<br /><br />
+        <div class="auth-form-body">
+            <label for="user">Użytkownik ............... </label>
+            <input autofocus="autofocus" class="input-block" id="user" name="user" tabindex="1" type="text" />
+            <!--autocapitalize="off" autocorrect="off" -->
+
+
+            <div style="clear:both;"> </div>
+            <div style="clear:both;"> </div>
+            <br />
+
+            <label for="pass">Hasło ........................ <!--<a href="/password_reset">(forgot password)</a>--></label>
+            <input class="input-block" id="pass" name="pass" tabindex="2" type="password" />
+            <!--<input id="return_to" name="return_to" type="hidden" value="/fbbdev/node-fastcgi" /> -->
+            <div style="clear:both;"> </div>
+            <br />
+            <input class="button" id="submit" name="submit" tabindex="3" type="submit" value="Zaloguj się" />
+            <!--data-disable-with="Logowanie…"-->
+        </div>
+        <!--</form>-->
+		<br /><br /><br />
+		<div class="auth-form-header">
+            <h1>Rejestracja</h1>
+        </div>
+
+        <div class="auth-form-body">
+            <label for="user">Adres e-mail ............... </label>
+            <input autocapitalize="off" autocorrect="off" class="input-block" id="user_register" name="user_register" tabindex="4" type="text" />
+            <div style="clear:both;"> </div>
+            <div style="clear:both;"> </div>
+            <br />
+                                 
+            <div style="clear:both;"> </div>
+            <br />
+            <input class="button" data-disable-with="Logowanie…" id="submit_register" name="submit_register" tabindex="5" type="submit" value="Rejestracja" />
+            <br /><br /><br />
+            versio Paweł Wypustek<br />
+            <a href="mailto:pawel.wypustek@gmail.com">pawel.wypustek@gmail.com</a> <br />
+            tel. 601 184 416
+
+        </div>
+    </div>
+    </script>
+	
+	<div id="dialogs" style="display: none;"> 	
+	</div> 
+
+
+</body>
+</html>
